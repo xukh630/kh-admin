@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration debug="false">
+
+    <!--设置日志目录-->
+    <!--<property name="LOG_HOME" value="/openapi/logs/liquidator-platform-admin-logs"/>-->
+    <property name="LOG_HOME" value="${user.home}/logs/liquidator-admin-logs"/>
+    <!--设置日志名-->
+    <property name="LOG_NAME" value="liquidator-admin"/>
+
+    <!--设置应用名-->
+    <contextName>liquidator-platform-admin</contextName>
+
+    <!--获得当前日期-->
+    <timestamp key="dayStr" datePattern="yyyyMMdd"/>
+
+
+    <!--日志输出到控制台-->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!--错误日志-->
+    <appender name="error" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>
+                ${LOG_HOME}/${LOG_NAME}_error_%d{yyyy-MM-dd}.log.gz
+            </fileNamePattern>
+        </rollingPolicy>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+    </appender>
+
+    <!--业务日志-->
+    <appender name="business" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>
+                ${LOG_HOME}/${LOG_NAME}_business_%d{yyyy-MM-dd}.log.gz
+            </fileNamePattern>
+        </rollingPolicy>
+    </appender>
+
+    <!--task日志-->
+    <appender name="task" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>
+                ${LOG_HOME}/${LOG_NAME}_task_%d{yyyy-MM-dd}.log.gz
+            </fileNamePattern>
+        </rollingPolicy>
+    </appender>
+
+    <logger name="task" level="info">
+        <appender-ref ref="task" />
+        <appender-ref ref="error"/>
+    </logger>
+
+    <logger name="dao" level="debug" />
+
+    <!--错误日志对像-->
+    <logger name="com.fshows.liquidator.admin" level="info">
+        <appender-ref ref="error"/>
+        <appender-ref ref="business"/>
+    </logger>
+
+    <root level="INFO">
+        <appender-ref ref="console"/>
+    </root>
+</configuration>

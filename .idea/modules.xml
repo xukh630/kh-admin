@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/kh-admin.iml" filepath="$PROJECT_DIR$/kh-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kh-admin-api/kh-admin-api.iml" filepath="$PROJECT_DIR$/kh-admin-api/kh-admin-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kh-admin-common/kh-admin-common.iml" filepath="$PROJECT_DIR$/kh-admin-common/kh-admin-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kh-admin-dao/kh-admin-dao.iml" filepath="$PROJECT_DIR$/kh-admin-dao/kh-admin-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kh-admin-model/kh-admin-model.iml" filepath="$PROJECT_DIR$/kh-admin-model/kh-admin-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kh-admin-service/kh-admin-service.iml" filepath="$PROJECT_DIR$/kh-admin-service/kh-admin-service.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:property-placeholder location="classpath*:config/systemConfig.properties" file-encoding="UTF-8" ignore-unresolvable="true"  />
+
+    <!-- 配置数据源 -->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init"
+          destroy-method="close">
+        <!-- 基本属性 url、user、password -->
+        <property name="driverClassName" value="${spring.datasource.driverClass}"/>
+        <property name="url" value="${spring.datasource.url}"/>
+        <property name="username" value="${spring.datasource.username}"/>
+        <property name="password" value="${spring.datasource.password}"/>
+
+        <!-- 配置初始化大小、最小、最大 -->
+        <property name="initialSize" value="${spring.datasource.initialSize}"/>
+        <property name="minIdle" value="${spring.datasource.minIdle}"/>
+        <property name="maxActive" value="${spring.datasource.maxActive}"/>
+
+        <!-- 配置获取连接等待超时的时间 -->
+        <property name="maxWait" value="${spring.datasource.maxWait}"/>
+
+        <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+        <property name="timeBetweenEvictionRunsMillis"
+                  value="${spring.datasource.timeBetweenEvictionRunsMillis}"/>
+
+        <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+        <property name="minEvictableIdleTimeMillis"
+                  value="${spring.datasource.minEvictableIdleTimeMillis}"/>
+
+        <property name="validationQuery" value="${spring.datasource.validationQuery}"/>
+        <property name="testWhileIdle" value="${spring.datasource.testWhileIdle}"/>
+        <property name="testOnBorrow" value="${spring.datasource.testOnBorrow}"/>
+        <property name="testOnReturn" value="${spring.datasource.testOnReturn}"/>
+
+        <!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
+        <property name="poolPreparedStatements"
+                  value="${spring.datasource.poolPreparedStatements}"/>
+        <property name="maxPoolPreparedStatementPerConnectionSize"
+                  value="${spring.datasource.maxPoolPreparedStatementPerConnectionSize}"/>
+
+        <!-- 配置监控统计拦截的filters -->
+        <property name="filters" value="${spring.datasource.filters}"/>
+        <property name="connectionProperties" value="${spring.datasource.connectionProperties}"/>
+    </bean>
+
+    <!-- 配置SqlSessionFactory -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!-- 数据源 -->
+        <property name="dataSource" ref="dataSource"/>
+        <!-- 加载mybatis的全局配置文件 -->
+        <property name="mapperLocations">
+            <list>
+                <value>classpath*:mapper/*.xml</value>
+            </list>
+        </property>
+        <property name="plugins">
+            <array>
+                <bean class="com.github.pagehelper.PageHelper">
+                    <property name="properties">
+                        <value>
+                            dialect=mysql
+                        </value>
+                    </property>
+                </bean>
+            </array>
+        </property>
+
+       <property name="configLocation" value="classpath:mybatis-config.xml" />
+    </bean>
+
+    <!-- 配置Mapper扫描器 -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <!-- 扫描包路径,如果需要扫描多个包中间用半角逗号隔开 -->
+        <property name="basePackage" value="com.fshows.liquidator.admin.dao"/>
+        <!-- 这边不能使用ref="sqlSessionFactory"原因是因为上面加载配置文件导致这边引用会报错 -->
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+    </bean>
+    <!--数据库源配置结束-->
+
+</beans>

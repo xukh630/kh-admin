@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="kh-admin-api:war">
+    <output-path>$PROJECT_DIR$/kh-admin-api/target</output-path>
+    <root id="archive" name="liquidatoradmin_dev_${current.time}.war">
+      <element id="artifact" artifact-name="kh-admin-api:war exploded" />
+    </root>
+  </artifact>
+</component>

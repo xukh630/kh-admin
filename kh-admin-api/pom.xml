@@ -1,0 +1,210 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <artifactId>kh-admin</artifactId>
+        <groupId>com.kh.admin</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>kh-admin-api</artifactId>
+    <packaging>war</packaging>
+
+    <name>kh-admin-api Maven Webapp</name>
+    <url>http://maven.apache.org</url>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.kh.admin</groupId>
+            <artifactId>kh-admin-service</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+
+
+    <profiles>
+        <!--开发环境-->
+        <profile>
+            <id>dev</id>
+            <properties>
+                <active.profile>dev</active.profile>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <!--<build>
+                <resources>
+                    <resource>
+                        <directory>src/main/resources/config</directory>
+                        <excludes>
+                            <exclude>*.properties</exclude>
+                            <exclude>*.xml</exclude>
+                        </excludes>
+                    </resource>
+                </resources>
+            </build>-->
+        </profile>
+        <!--测试环境-->
+        <profile>
+            <id>test</id>
+            <properties>
+                <active.profile>test</active.profile>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <phase>test</phase>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                                <configuration>
+                                    <tasks>
+                                        <!--替换配置文件-->
+                                        <delete file="${project.build.outputDirectory}/config/systemConfig.properties"/>
+                                        <delete file="${project.build.outputDirectory}/config/systemConfig-release.properties"/>
+                                        <delete file="${project.build.outputDirectory}/config/systemConfig-sit.properties"/>
+                                        <move file="${project.build.outputDirectory}/config/systemConfig-test.properties"
+                                              tofile="${project.build.outputDirectory}/config/systemConfig.properties"/>
+                                        <!--替换日志配置文件-->
+                                        <delete file="${project.build.outputDirectory}/logback-product.xml"/>
+                                        <delete file="${project.build.outputDirectory}/logback-pre.xml"/>
+                                        <delete file="${project.build.outputDirectory}/logback.xml"/>
+                                        <move file="${project.build.outputDirectory}/logback_test.xml"
+                                              tofile="${project.build.outputDirectory}/logback.xml"/>
+                                    </tasks>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <!--预发布环境-->
+        <profile>
+            <id>pre</id>
+            <properties>
+                <active.profile>pre</active.profile>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <phase>test</phase>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                                <configuration>
+                                    <tasks>
+                                        <!--替换配置文件-->
+                                        <delete file="${project.build.outputDirectory}/config/systemConfig.properties"/>
+                                        <delete file="${project.build.outputDirectory}/config/systemConfig-release.properties"/>
+                                        <delete file="${project.build.outputDirectory}/config/systemConfig-test.properties"/>
+                                        <move file="${project.build.outputDirectory}/config/systemConfig-sit.properties"
+                                              tofile="${project.build.outputDirectory}/config/systemConfig.properties"/>
+                                        <!--替换日志配置文件-->
+                                        <delete file="${project.build.outputDirectory}/logback-product.xml"/>
+                                        <delete file="${project.build.outputDirectory}/logback_test.xml"/>
+                                        <delete file="${project.build.outputDirectory}/logback.xml"/>
+                                        <move file="${project.build.outputDirectory}/logback-pre.xml"
+                                              tofile="${project.build.outputDirectory}/logback.xml"/>
+                                    </tasks>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <!--生产环境-->
+        <profile>
+            <id>product</id>
+            <properties>
+                <active.profile>product</active.profile>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <phase>test</phase>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                                <configuration>
+                                    <tasks>
+                                        <!--替换配置文件-->
+                                        <delete file="${project.build.outputDirectory}/config/systemConfig.properties"/>
+                                        <delete file="${project.build.outputDirectory}/config/systemConfig-sit.properties"/>
+                                        <delete file="${project.build.outputDirectory}/config/systemConfig-test.properties"/>
+                                        <move file="${project.build.outputDirectory}/config/systemConfig-release.properties"
+                                              tofile="${project.build.outputDirectory}/config/systemConfig.properties"/>
+                                        <!--替换日志配置文件-->
+                                        <delete file="${project.build.outputDirectory}/logback-pre.xml"/>
+                                        <delete file="${project.build.outputDirectory}/logback_test.xml"/>
+                                        <delete file="${project.build.outputDirectory}/logback.xml"/>
+                                        <move file="${project.build.outputDirectory}/logback-product.xml"
+                                              tofile="${project.build.outputDirectory}/logback.xml"/>
+                                    </tasks>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+    </profiles>
+
+    <build>
+        <!--打包的名字-->
+        <finalName>liquidatoradmin_${active.profile}_${current.time}</finalName>
+        <plugins>
+            <!--mybatis生成代码插件-->
+            <plugin>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-maven-plugin</artifactId>
+                <version>1.3.2</version>
+                <configuration>
+                    <configurationFile>src/main/resources/generator/generatorConfig.xml</configurationFile>
+                    <verbose>true</verbose>
+                    <overwrite>true</overwrite>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>xyz.mrwood.mybatis.generator.plugin</groupId>
+                        <artifactId>mybatis-generator-plugin</artifactId>
+                        <version>1.0</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+
+            <!--生成当前时间，maven原生的不支持修改时区，用了第三方的-->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>1.10</version>
+                <executions>
+                    <execution>
+                        <id>timestamp-property</id>
+                        <goals>
+                            <goal>timestamp-property</goal>
+                        </goals>
+                        <configuration>
+                            <name>current.time</name>
+                            <pattern>yyyyMMddHHmmss</pattern>
+                            <timeZone>GMT+8</timeZone>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+    </build>
+
+</project>
