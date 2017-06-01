@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6861f4f7-7a2f-4d4b-a119-65c959f0a267" name="Default" comment="自动生成的配置文件">
+    <list default="true" id="6861f4f7-7a2f-4d4b-a119-65c959f0a267" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-api/target/liquidatoradmin_dev_${current.time}/WEB-INF/lib/kh-admin-model-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/kh-admin-api/target/liquidatoradmin_dev_${current.time}/WEB-INF/lib/kh-admin-model-1.0-SNAPSHOT.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-api/target/classes/generator/generator.properties" afterPath="$PROJECT_DIR$/kh-admin-api/target/classes/generator/generator.properties" />
@@ -971,7 +971,7 @@
       <updated>1495809275797</updated>
       <workItem from="1495809278610" duration="6780000" />
       <workItem from="1496129002114" duration="20231000" />
-      <workItem from="1496277266307" duration="5522000" />
+      <workItem from="1496277266307" duration="5536000" />
     </task>
     <task id="LOCAL-00001" summary="自动生成的配置文件">
       <created>1496239248681</created>
@@ -994,11 +994,18 @@
       <option name="project" value="LOCAL" />
       <updated>1496285540081</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="自动生成的配置文件">
+      <created>1496285559012</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1496285559012</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32533000" />
+    <option name="totallyTimeSpent" value="32547000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="14" width="1378" height="744" extended-state="0" />
