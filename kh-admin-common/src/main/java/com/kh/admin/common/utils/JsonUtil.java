@@ -118,4 +118,21 @@ public class JsonUtil {
     public static Map toHashMap(String text){
         return JSON.parseObject(text, LinkedHashMap.class);
     }
+
+
+    //风控接口返回值
+//   {
+//        "alipay_security_data_info_securitydata_query_response":{
+//        "code":"10000",
+//         "msg":"Success",
+//         "result":"{ \"210100197210019087\": \"hasRisk\" , \"130130197001303316\":\"noRisk\"}"
+//            },
+//        "sign":"ERITJKEIJKJHKKKKKKKHJEREEEEEEEEEEE"
+//    }
+
+       /* [
+            {"external_id":"new_id_00","cert_no":"6530*****120021","company_name":"浙江*****有限公司","business_license_no":"44******2153","bank_card_no":"696*****4796"},
+        {"external_id":"new_id_01","cert_no":"65*****99610022","company_name":"浙江*****有限公司","business_license_no":"44078***12154","bank_card_no":"696******791"}
+        ]*/
+
 }
