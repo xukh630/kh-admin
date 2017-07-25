@@ -363,7 +363,7 @@ public class DateUtil {
         return Integer.valueOf(time);
     }
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         Integer a = DateUtil.formatDateInteger(Long.valueOf(1490112000000l));
         String s = formatDateString(1490112000000l);
         Integer i = formatDateInteger(1490112000000l);
@@ -373,7 +373,7 @@ public class DateUtil {
         System.out.println(i);
         System.out.println(o);
 
-    }
+    }*/
 
     public static boolean isScopeByThreeMonth(Integer createDay){
         Integer today = Integer.valueOf(DateTime.now().toString("yyyyMMdd"));
@@ -397,5 +397,9 @@ public class DateUtil {
         } catch (ParseException e) {
             return null;
         }
+    }
+
+    public static void main(String[] args) {
+        System.out.println(1496332800000l - 1496246400000l);
     }
 }

@@ -3,7 +3,8 @@
  */
 package com.kh.admin.common.utils;
 
-import com.fshows.liquidator.platform.openapi.common.result.ValidateResult;
+
+import com.kh.admin.common.result.ValidateResult;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;

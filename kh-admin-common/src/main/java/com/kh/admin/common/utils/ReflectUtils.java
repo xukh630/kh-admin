@@ -3,8 +3,9 @@
  */
 package com.kh.admin.common.utils;
 
-import com.fshows.liquidator.platform.openapi.common.result.ResultModle;
+
 import com.google.common.collect.Maps;
+import com.kh.admin.common.result.ResultModle;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;

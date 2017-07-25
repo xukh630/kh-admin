@@ -1,92 +1,16 @@
-package com.kh.admin.api.test;
+package com.kh.admin.common.utils;/**
+ * Created by Administrator on 2017/7/17.
+ */
 
-import com.alibaba.fastjson.JSON;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.kh.admin.common.utils.DateUtil;
-import com.kh.admin.common.utils.JsonUtil;
-import com.kh.admin.common.utils.RandomNumberUtil;
-import com.kh.admin.common.utils.ResourceUtil;
-import com.kh.admin.model.form.UserForm;
-import org.apache.commons.lang3.StringUtils;
-
-import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
- * Created by Administrator on 2017/2/15.
+ * @author xukh
+ * @create 2017-07-17-22:09
  */
-public class Test {
-
-    /*public static void main(String[] args) throws IOException {
-        String content ="{\"username\":\"胖头欧巴\",\"password\":\"123\",\"app_id\":\"11111\"}";
-        UserForm form = new UserForm();
-        form.setAppId("111");
-        form.setUsername("hehe");
-        form.setPassword("123");
-        String s = JSON.toJSONString(form);
-        String s1 = JsonUtil.toJSonByJackson(form);
-        String s2 = JsonUtil.toJsonString(form);
-        UserForm userForm = JsonUtil.jsonHumpToObj(content, UserForm.class);
-        System.out.println(s + "  " + s1 + "  " + s2);
-        System.out.println(userForm.getUsername() + " " + userForm.getPassword() + " " + userForm.getAppId());
-    }*/
-
-    /*public static void main(String[] args) {
-        String nowDateFormat = DateUtil.getNowDateFormat();
-        Date date = DateUtil.toDate(nowDateFormat);
-        System.out.println(date);
-    }*/
-
-    /*public static void main(String[] args) {
-        // 获取当前年份、月份、日期
-        Calendar cale = null;
-        cale = Calendar.getInstance();
-        int year = cale.get(Calendar.YEAR);
-        int month = cale.get(Calendar.MONTH) + 1;
-        int day = cale.get(Calendar.DATE);
-        int hour = cale.get(Calendar.HOUR_OF_DAY);
-        int minute = cale.get(Calendar.MINUTE);
-        int second = cale.get(Calendar.SECOND);
-        int dow = cale.get(Calendar.DAY_OF_WEEK);
-        int dom = cale.get(Calendar.DAY_OF_MONTH);
-        int doy = cale.get(Calendar.DAY_OF_YEAR);
-
-        System.out.println("Current Date: " + cale.getTime());
-        System.out.println("Year: " + year);
-        System.out.println("Month: " + month);
-        System.out.println("Day: " + day);
-        System.out.println("Hour: " + hour);
-        System.out.println("Minute: " + minute);
-        System.out.println("Second: " + second);
-        System.out.println("Day of Week: " + dow);
-        System.out.println("Day of Month: " + dom);
-        System.out.println("Day of Year: " + doy);
-
-        // 获取当月第一天和最后一天
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-        String firstday, lastday;
-        // 获取前月的第一天
-        cale = Calendar.getInstance();
-        cale.add(Calendar.MONTH, 0);
-        cale.set(Calendar.DAY_OF_MONTH, 1);
-        firstday = format.format(cale.getTime());
-        // 获取前月的最后一天
-        cale = Calendar.getInstance();
-        cale.add(Calendar.MONTH, 1);
-        cale.set(Calendar.DAY_OF_MONTH, 0);
-        lastday = format.format(cale.getTime());
-        System.out.println("本月第一天和最后一天分别是 ： " + firstday + " and " + lastday);
-
-        // 获取当前日期字符串
-        Date d = new Date();
-        System.out.println("当前日期字符串1：" + format.format(d));
-        System.out.println("当前日期字符串2：" + year + "/" + month + "/" + day + " "
-                + hour + ":" + minute + ":" + second);
-    }*/
-
-
+public class CalendarUtil {
 
     private static Map<String, String> getDate(String date1) throws ParseException {
         SimpleDateFormat df = new SimpleDateFormat("yyyyMMdd");
@@ -193,45 +117,6 @@ public class Test {
         return map;
     }
 
-
-
-/*    public static void main(String[] args) throws ParseException {
-        String custId = RandomNumberUtil.createCustId();
-        String nowDateStr = DateUtil.getNowDateStr();
-        System.out.println(nowDateStr);
-        System.out.println(custId);  //14
-
-    }*/
-
-    /*public static void main(String[] args) throws ParseException {
-        String time = "2017-7-16 10:01:01";
-
-        SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-
-        Date parse = date.parse(time);
-
-        long time1 = parse.getTime();
-
-        long now = DateUtil.getNow();
-
-        Long a = 1500134400000l;
-        Long b = 1500220800000l;
-
-        Date date1 = new Date();
-        date1.setTime(b);
-
-        System.out.println(date);
-        System.out.println(parse);
-        System.out.println(time1);
-        System.out.println(now);
-        System.out.println(now - time1);
-        System.out.println(b-a);
-        System.out.println(date1);
-
-
-
-    }*/
-
     /** * 获得指定日期的前一天 *
      @param specifiedDay
       * @return
@@ -268,35 +153,5 @@ public class Test {
         c.set(Calendar.DATE,day+1);
         String dayAfter=new SimpleDateFormat("yyyyMMdd").format(c.getTime());
         return dayAfter;
-    }
-
-    /*public static void main(String[] args) {
-        String specifiedDayBefore = getSpecifiedDayBefore("20170701");
-        System.out.println(specifiedDayBefore);
-        String specifiedDayAfter = getSpecifiedDayAfter("20170630");
-        System.out.println(specifiedDayAfter);
-    }*/
-
-    /*public static void main(String[] args) {
-        String system = ResourceUtil.getSystem("qiniu.access.key");
-        System.out.println(system);
-    }*/
-
-    /*public static void main(String[] args) {
-        String bankCard = "    11111  111111 111111 ";
-        System.out.println(bankCard);
-        bankCard = bankCard.replaceAll(" ", "");
-        System.out.println(bankCard);
-
-        String bank= "    11111  111111 111111 ";
-        bank = bank.trim();
-        System.out.println(bank);
-    }*/
-
-    public static void main(String[] args) {
-        String s = "平安银行";
-        if (StringUtils.equals("平安银行",s)) {
-            System.out.println("true");
-        }
     }
 }

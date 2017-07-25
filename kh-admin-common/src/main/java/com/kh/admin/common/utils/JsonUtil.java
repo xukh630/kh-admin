@@ -1,6 +1,7 @@
 package com.kh.admin.common.utils;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -135,4 +136,5 @@ public class JsonUtil {
         {"external_id":"new_id_01","cert_no":"65*****99610022","company_name":"浙江*****有限公司","business_license_no":"44078***12154","bank_card_no":"696******791"}
         ]*/
 
+       //[{"external_id":"111111111","company_name":"noRisk","cert_no":"noRisk","business_license_no":"noRisk","bank_card_no":"noRisk"}]
 }
