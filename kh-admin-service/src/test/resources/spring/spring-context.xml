@@ -14,12 +14,12 @@
             location="classpath*:config/systemConfig.properties" file-encoding="UTF-8" ignore-unresolvable="true" />
 
     <!--注入除controller之外的-->
-    <context:component-scan base-package="com.kh.admin.api.controller">
+    <context:component-scan base-package="com.kh.admin">
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
         <context:exclude-filter type="annotation" expression="org.springframework.web.bind.annotation.RestController" />
     </context:component-scan>
 
-    <bean class="com.kh.admin.api.spring.SpringUtils" />
+    <bean class="com.kh.admin.common.utils.SpringUtils" />
 
 
     <!-- 集成radis cache -->

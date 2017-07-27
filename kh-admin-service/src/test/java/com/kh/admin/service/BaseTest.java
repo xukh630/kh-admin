@@ -13,6 +13,6 @@ import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
  * 时间：2017-06-05 15:38
  * 作者：Mr.Kiwi
  */
-@ContextConfiguration(locations = {"classpath*:spring/spring-context.xml", "classpath*:spring/spring-context-datasource.xml", "classpath*:spring/spring-context-mq.xml"})
+@ContextConfiguration(locations = {"classpath*:spring/spring-context.xml"})
 public class BaseTest extends AbstractTestNGSpringContextTests {
 }
