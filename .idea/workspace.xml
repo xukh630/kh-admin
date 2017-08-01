@@ -57,17 +57,27 @@
         <entry file="file://$PROJECT_DIR$/kh-admin-api/src/main/resources/generator/generator.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="198">
-              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="98">
-              <caret line="454" column="34" lean-forward="false" selection-start-line="454" selection-start-column="34" selection-end-line="454" selection-end-column="34" />
+            <state relative-caret-position="152">
+              <caret line="457" column="25" lean-forward="true" selection-start-line="457" selection-start-column="25" selection-end-line="457" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="testController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/kh-admin-api/src/main/java/com/kh/admin/api/controller/testController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="4" column="30" lean-forward="true" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -205,7 +215,6 @@
         <option value="$PROJECT_DIR$/kh-admin-common/src/main/java/com/kh/admin/common/utils/CalendarUtil.java" />
         <option value="$PROJECT_DIR$/kh-admin-api/src/main/java/com/kh/admin/api/test/Test.java" />
         <option value="$PROJECT_DIR$/kh-admin-service/src/main/java/com/kh/admin/service/BaseTest.java" />
-        <option value="$PROJECT_DIR$/kh-admin-api/src/main/java/com/kh/admin/api/controller/testController.java" />
         <option value="$PROJECT_DIR$/kh-admin-service/src/main/java/com/kh/admin/service/RedisService.java" />
         <option value="$PROJECT_DIR$/kh-admin-api/src/main/java/com/kh/admin/api/controller/RedisController.java" />
         <option value="$PROJECT_DIR$/kh-admin-common/src/main/java/com/kh/admin/common/spring/SpringUtils.java" />
@@ -222,6 +231,7 @@
         <option value="$PROJECT_DIR$/kh-admin-service/src/main/java/com/kh/admin/service/PostService.java" />
         <option value="$PROJECT_DIR$/kh-admin-common/src/main/java/com/kh/admin/common/result/ResultModle.java" />
         <option value="$PROJECT_DIR$/kh-admin-service/src/main/java/com/kh/admin/service/t4.java" />
+        <option value="$PROJECT_DIR$/kh-admin-api/src/main/java/com/kh/admin/api/controller/testController.java" />
       </list>
     </option>
   </component>
@@ -395,7 +405,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -421,11 +435,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
+              <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="generator" />
+              <option name="myItemId" value="api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1305,7 +1323,7 @@
       <workItem from="1501203230440" duration="17328000" />
       <workItem from="1501466147160" duration="774000" />
       <workItem from="1501555060194" duration="307000" />
-      <workItem from="1501557043107" duration="2084000" />
+      <workItem from="1501557043107" duration="3285000" />
     </task>
     <task id="LOCAL-00001" summary="自动生成的配置文件">
       <created>1496239248681</created>
@@ -1363,7 +1381,21 @@
       <option name="project" value="LOCAL" />
       <updated>1501582388782</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="1">
+      <created>1501582432885</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1501582432885</updated>
+    </task>
+    <task id="LOCAL-00010" summary="添加注解">
+      <created>1501595827443</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1501595827443</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1399,14 +1431,15 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="132249000" />
+    <option name="totallyTimeSpent" value="133450000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="8" width="1370" height="720" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44197953" sideWeight="0.5030534" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44197953" sideWeight="0.5030534" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297491" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18091603" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1423,7 +1456,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44197953" sideWeight="0.49694657" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44197953" sideWeight="0.49694657" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30546075" sideWeight="0.49694657" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30114567" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1481,7 +1514,9 @@
     <MESSAGE value="自动生成的配置文件" />
     <MESSAGE value="redis" />
     <MESSAGE value="单元测试" />
-    <option name="LAST_COMMIT_MESSAGE" value="单元测试" />
+    <MESSAGE value="1" />
+    <MESSAGE value="添加注解" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加注解" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1591,13 +1626,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="348">
           <caret line="38" column="40" lean-forward="false" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kh-admin-api/src/main/java/com/kh/admin/api/controller/testController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="38" lean-forward="true" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -1845,15 +1873,23 @@
     <entry file="file://$PROJECT_DIR$/kh-admin-api/src/main/resources/generator/generator.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="454" column="34" lean-forward="false" selection-start-line="454" selection-start-column="34" selection-end-line="454" selection-end-column="34" />
+        <state relative-caret-position="152">
+          <caret line="457" column="25" lean-forward="true" selection-start-line="457" selection-start-column="25" selection-end-line="457" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kh-admin-api/src/main/java/com/kh/admin/api/controller/testController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="30" lean-forward="true" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
           <folding />
         </state>
       </provider>
