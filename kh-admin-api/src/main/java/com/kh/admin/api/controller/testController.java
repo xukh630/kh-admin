@@ -3,11 +3,15 @@ package com.kh.admin.api.controller;/**
  */
 
 import org.joda.time.DateTime;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author xukh
  * @create 2017-07-25-16:52
  */
+@RestController
+@RequestMapping("/test")
 public class testController {
     public static void main(String[] args) {
         Integer day = Integer.valueOf(DateTime.now().plusDays(-1).toString("yyyyMMdd"));
@@ -20,4 +24,5 @@ public class testController {
         String yyyyMMdd = dateTime.plusDays(-1).toString("yyyyMMdd");
         System.out.println(yyyyMMdd);
     }
+
 }
