@@ -2,43 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6861f4f7-7a2f-4d4b-a119-65c959f0a267" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kh-admin-api/src/main/java/com/kh/admin/api/controller/PostController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kh-admin-api/src/main/java/com/kh/admin/api/test/RefundTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kh-admin-model/src/main/java/com/kh/admin/model/LpDayOrder.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kh-admin-model/src/main/java/com/kh/admin/model/LpRefundOrder.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kh-admin-service/src/main/java/com/kh/admin/service/PostService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-api/target/classes/com/kh/admin/api/controller/UserController.class" afterPath="$PROJECT_DIR$/kh-admin-api/target/classes/com/kh/admin/api/controller/UserController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-api/target/classes/com/kh/admin/api/converter/StringToTrimmedStringConverter.class" afterPath="$PROJECT_DIR$/kh-admin-api/target/classes/com/kh/admin/api/converter/StringToTrimmedStringConverter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-api/target/classes/com/kh/admin/api/shiro/filter/CaptchaFormAuthenticationFilter.class" afterPath="$PROJECT_DIR$/kh-admin-api/target/classes/com/kh/admin/api/shiro/filter/CaptchaFormAuthenticationFilter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-api/target/classes/com/kh/admin/api/shiro/realm/SecurityRealm.class" afterPath="$PROJECT_DIR$/kh-admin-api/target/classes/com/kh/admin/api/shiro/realm/SecurityRealm.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-api/target/classes/com/kh/admin/api/spring/SpringUtils.class" afterPath="$PROJECT_DIR$/kh-admin-api/target/classes/com/kh/admin/api/spring/SpringUtils.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-api/target/classes/com/kh/admin/api/test/Test.class" afterPath="$PROJECT_DIR$/kh-admin-api/target/classes/com/kh/admin/api/test/Test.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-api/target/liquidatoradmin_dev_${current.time}/WEB-INF/classes/com/kh/admin/api/controller/UserController.class" afterPath="$PROJECT_DIR$/kh-admin-api/target/liquidatoradmin_dev_${current.time}/WEB-INF/classes/com/kh/admin/api/controller/UserController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-api/target/liquidatoradmin_dev_${current.time}/WEB-INF/classes/com/kh/admin/api/converter/StringToTrimmedStringConverter.class" afterPath="$PROJECT_DIR$/kh-admin-api/target/liquidatoradmin_dev_${current.time}/WEB-INF/classes/com/kh/admin/api/converter/StringToTrimmedStringConverter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-api/target/liquidatoradmin_dev_${current.time}/WEB-INF/classes/com/kh/admin/api/shiro/filter/CaptchaFormAuthenticationFilter.class" afterPath="$PROJECT_DIR$/kh-admin-api/target/liquidatoradmin_dev_${current.time}/WEB-INF/classes/com/kh/admin/api/shiro/filter/CaptchaFormAuthenticationFilter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-api/target/liquidatoradmin_dev_${current.time}/WEB-INF/classes/com/kh/admin/api/shiro/realm/SecurityRealm.class" afterPath="$PROJECT_DIR$/kh-admin-api/target/liquidatoradmin_dev_${current.time}/WEB-INF/classes/com/kh/admin/api/shiro/realm/SecurityRealm.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-api/target/liquidatoradmin_dev_${current.time}/WEB-INF/classes/com/kh/admin/api/spring/SpringUtils.class" afterPath="$PROJECT_DIR$/kh-admin-api/target/liquidatoradmin_dev_${current.time}/WEB-INF/classes/com/kh/admin/api/spring/SpringUtils.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-api/target/liquidatoradmin_dev_${current.time}/WEB-INF/classes/com/kh/admin/api/test/Test.class" afterPath="$PROJECT_DIR$/kh-admin-api/target/liquidatoradmin_dev_${current.time}/WEB-INF/classes/com/kh/admin/api/test/Test.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-api/target/liquidatoradmin_dev_${current.time}/WEB-INF/lib/kh-admin-common-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/kh-admin-api/target/liquidatoradmin_dev_${current.time}/WEB-INF/lib/kh-admin-common-1.0-SNAPSHOT.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-api/target/liquidatoradmin_dev_${current.time}/WEB-INF/lib/kh-admin-model-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/kh-admin-api/target/liquidatoradmin_dev_${current.time}/WEB-INF/lib/kh-admin-model-1.0-SNAPSHOT.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-api/target/liquidatoradmin_dev_${current.time}/WEB-INF/lib/kh-admin-service-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/kh-admin-api/target/liquidatoradmin_dev_${current.time}/WEB-INF/lib/kh-admin-service-1.0-SNAPSHOT.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-common/target/classes/com/kh/admin/common/constants/ConstantsUtils.class" afterPath="$PROJECT_DIR$/kh-admin-common/target/classes/com/kh/admin/common/constants/ConstantsUtils.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-common/target/classes/com/kh/admin/common/constants/ErrorConstants.class" afterPath="$PROJECT_DIR$/kh-admin-common/target/classes/com/kh/admin/common/constants/ErrorConstants.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-common/target/classes/com/kh/admin/common/result/ResultModle.class" afterPath="$PROJECT_DIR$/kh-admin-common/target/classes/com/kh/admin/common/result/ResultModle.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-common/target/classes/com/kh/admin/common/utils/DateUtil.class" afterPath="$PROJECT_DIR$/kh-admin-common/target/classes/com/kh/admin/common/utils/DateUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-common/target/classes/com/kh/admin/common/utils/JsonUtil.class" afterPath="$PROJECT_DIR$/kh-admin-common/target/classes/com/kh/admin/common/utils/JsonUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-model/target/classes/com/kh/admin/model/LpUser.class" afterPath="$PROJECT_DIR$/kh-admin-model/target/classes/com/kh/admin/model/LpUser.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-model/target/classes/com/kh/admin/model/LpUserExt.class" afterPath="$PROJECT_DIR$/kh-admin-model/target/classes/com/kh/admin/model/LpUserExt.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-service/target/classes/com/kh/admin/service/UserServiceImpl.class" afterPath="$PROJECT_DIR$/kh-admin-service/target/classes/com/kh/admin/service/UserServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-api/kh-admin-api.iml" afterPath="$PROJECT_DIR$/kh-admin-api/kh-admin-api.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-common/kh-admin-common.iml" afterPath="$PROJECT_DIR$/kh-admin-common/kh-admin-common.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-common/src/main/java/com/kh/admin/common/result/ResultModle.java" afterPath="$PROJECT_DIR$/kh-admin-common/src/main/java/com/kh/admin/common/result/ResultModle.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-dao/kh-admin-dao.iml" afterPath="$PROJECT_DIR$/kh-admin-dao/kh-admin-dao.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-model/kh-admin-model.iml" afterPath="$PROJECT_DIR$/kh-admin-model/kh-admin-model.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-service/kh-admin-service.iml" afterPath="$PROJECT_DIR$/kh-admin-service/kh-admin-service.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -89,11 +53,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="generator.properties" pinned="false" current-in-tab="true">
+      <file leaf-file-name="generator.properties" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/kh-admin-api/src/main/resources/generator/generator.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="198">
               <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="98">
+              <caret line="454" column="34" lean-forward="false" selection-start-line="454" selection-start-column="34" selection-end-line="454" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -1331,7 +1305,7 @@
       <workItem from="1501203230440" duration="17328000" />
       <workItem from="1501466147160" duration="774000" />
       <workItem from="1501555060194" duration="307000" />
-      <workItem from="1501557043107" duration="2008000" />
+      <workItem from="1501557043107" duration="2084000" />
     </task>
     <task id="LOCAL-00001" summary="自动生成的配置文件">
       <created>1496239248681</created>
@@ -1382,7 +1356,14 @@
       <option name="project" value="LOCAL" />
       <updated>1501147991756</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="单元测试">
+      <created>1501582388782</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1501582388782</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1418,7 +1399,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="132173000" />
+    <option name="totallyTimeSpent" value="132249000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="8" width="1370" height="720" extended-state="0" />
@@ -1741,14 +1722,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="454" column="34" lean-forward="false" selection-start-line="454" selection-start-column="34" selection-end-line="454" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/kh-admin-common/src/main/java/com/kh/admin/common/utils/HttpUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -1873,6 +1846,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="454" column="34" lean-forward="false" selection-start-line="454" selection-start-column="34" selection-end-line="454" selection-end-column="34" />
           <folding />
         </state>
       </provider>
