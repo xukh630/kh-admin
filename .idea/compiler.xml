@@ -15,11 +15,11 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="kh-admin" target="1.8" />
-      <module name="kh-admin-api" target="1.7" />
-      <module name="kh-admin-common" target="1.7" />
-      <module name="kh-admin-dao" target="1.7" />
-      <module name="kh-admin-model" target="1.7" />
-      <module name="kh-admin-service" target="1.7" />
+      <module name="kh-admin-api" target="1.8" />
+      <module name="kh-admin-common" target="1.8" />
+      <module name="kh-admin-dao" target="1.8" />
+      <module name="kh-admin-model" target="1.8" />
+      <module name="kh-admin-service" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

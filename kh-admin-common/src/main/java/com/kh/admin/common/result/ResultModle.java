@@ -138,6 +138,9 @@ public class ResultModle<T> implements Serializable {
 
         return new ResultModle(ErrorConstants.COMMON_ERROR_CODE, msg);
     }
+
+    public ResultModle() {
+    }
 }
 
 
