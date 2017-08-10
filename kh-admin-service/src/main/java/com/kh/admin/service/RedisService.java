@@ -3,6 +3,9 @@ package com.kh.admin.service;/**
  */
 
 import com.kh.admin.common.utils.ResourceUtil;
+import com.kh.admin.model.Publisher;
+import com.kh.admin.model.SubThread;
+import com.kh.admin.model.Subscriber;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
@@ -181,4 +184,29 @@ public class RedisService {
        String time = jedis.set("time", "20170725");
        jedis.expire("time",20);
    }
+
+//Redis--------------发布订阅---------------------------------------------------------------------------------------------------------------------
+
+    //普通订阅subscribe  A  B    订阅类型   订阅频道   订阅数量
+    //频道发布publish    A  B    发布A频道  B 信息
+    //模式订阅psubscribe
+    //查看订阅信息pubsub
+
+    public static void producer(){
+        Jedis jedis1 = new Jedis("127.0.0.1");      //jedis 线程不安全    jedispool线程安全
+        Jedis jedis2 = new Jedis("127.0.0.1");
+        Jedis jedis3 = new Jedis("127.0.0.1");
+
+        Subscriber subscriber = new Subscriber();
+        //接收者   订阅两个频道
+        jedis1.subscribe(subscriber,"channel1","channel2");             //线程阻塞的
+        //两个发布者  发布消息
+        jedis2.publish("channel1","this is channel1");
+        jedis3.publish("channel2","this is channel2");
+    }
+
+    public static void main(String[] args) {
+        new Thread(new SubThread()).start();
+        new Thread(new Publisher()).start();
+    }
 }

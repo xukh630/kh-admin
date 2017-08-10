@@ -21,8 +21,22 @@ public class PostController {
 
     @RequestMapping("/addMerchant")
     public void addMerchant(){
-        postService.add();
+        postService.addMerchant();
     }
 
+    @RequestMapping("/queryMerchant")
+    public void queryMerchant(){
+        postService.queryMerchant();
+    }
+
+    @RequestMapping("/bindBankCard")
+    public void bindBankCard(){
+        postService.bindBankCard();
+    }
+
+    @RequestMapping("/tradePay")
+    public void tradePay(){
+        postService.tradePay();
+    }
 
 }

@@ -2,14 +2,12 @@ package com.kh.admin.api.test;
 
 import com.alibaba.fastjson.JSON;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.kh.admin.common.utils.DateUtil;
-import com.kh.admin.common.utils.JsonUtil;
-import com.kh.admin.common.utils.RandomNumberUtil;
-import com.kh.admin.common.utils.ResourceUtil;
+import com.kh.admin.common.utils.*;
 import com.kh.admin.model.form.UserForm;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -294,9 +292,9 @@ public class Test {
     }*/
 
     public static void main(String[] args) {
-        String s = "平安银行";
-        if (StringUtils.equals("平安银行",s)) {
-            System.out.println("true");
-        }
+        BigDecimal a = BigDecimal.TEN;
+        BigDecimal b = BigDecimal.ONE;
+        BigDecimal subtract = BigDecimalUtil.subtract(a, b);
+        System.out.println(subtract);
     }
 }

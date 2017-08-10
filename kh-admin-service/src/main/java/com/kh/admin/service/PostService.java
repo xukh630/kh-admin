@@ -9,6 +9,7 @@ import com.alipay.api.AlipayApiException;
 import com.alipay.api.internal.util.AlipaySignature;
 import com.kh.admin.common.result.ResultModle;
 import com.kh.admin.common.utils.HttpUtil;
+import com.kh.admin.model.alipay.SubMerchant;
 import okhttp3.*;
 import org.apache.http.client.methods.HttpPost;
 import org.springframework.stereotype.Service;
@@ -35,7 +36,8 @@ public class PostService {
             "f3RFie5v/JY7NkI3Re2uqnOnmZFclZkCIBjtqrGhIVuBdsnNqKJTJ+H/lGCj8VKw\n" +
             "7EPWRNREMaIX";
 
-    public void add(){
+    //商户入驻
+    public void addMerchant(){
         Map<String, String> data = Maps.newHashMap();
         Map<String, Object> content = assemblyParamsAddMerchant();
         data.put("app_id","20170630091233203");
@@ -44,13 +46,73 @@ public class PostService {
         data.put("content", JSON.toJSONString(content));
 
         //加签
+        addSign(data);
+
+        //发送请求
+        sendPost(data);
+    }
+
+    //查询商户
+    public void queryMerchant(){
+        Map<String, String> data = Maps.newHashMap();
+        Map<String, Object> content = assemblyParamsQueryMerchant();
+        data.put("app_id","20170630091233203");
+        data.put("method","fshows.liquidation.submerchant.query");
+        data.put("version","1.0");
+        data.put("content", JSON.toJSONString(content));
+
+        //加签
+        addSign(data);
+
+        //发送请求
+        sendPost(data);
+    }
+
+    //商户绑卡
+    public void bindBankCard(){
+        Map<String, String> data = Maps.newHashMap();
+        Map<String, Object> content = assemblyParamsBindBankCard();
+        data.put("app_id","20170630091233203");
+        data.put("method","fshows.liquidation.submerchant.bank.bind");
+        data.put("version","1.0");
+        data.put("content", JSON.toJSONString(content));
+
+        //加签
+        addSign(data);
+
+        //发送请求
+        sendPost(data);
+    }
+
+    //支付宝统一收单交易支付(刷卡)
+    public void tradePay(){
+        Map<String, String> data = Maps.newHashMap();
+        Map<String, Object> content = assemblyParamsTradePay();
+        data.put("app_id","20170630091233203");
+        data.put("method","fshows.liquidation.submerchant.alipay.trade.pay");
+        data.put("version","1.0");
+        data.put("content", JSON.toJSONString(content));
+
+        //加签
+        addSign(data);
+
+        //发送请求
+        sendPost(data);
+    }
+
+
+
+    public void addSign(Map<String, String> data){
+        //加签
         try {
             String sign = AlipaySignature.rsaSign(data, privateKey, "utf-8");
             data.put("sign",sign);
         } catch (AlipayApiException e) {
             e.printStackTrace();
         }
+    }
 
+    public void sendPost(Map<String, String> data){
         try {
             String post = HttpUtil.post(url, null, data);
             ResultModle resultModle = JSON.parseObject(post, ResultModle.class);
@@ -63,13 +125,15 @@ public class PostService {
         }
     }
 
+
+
     public Map<String,Object> assemblyParamsAddMerchant(){
 
         Map<String, Object> content = Maps.newHashMap();
-        content.put("external_id","XKH06230429150135691");
+        content.put("external_id","XKH06230429150190000");
         content.put("name","xukh测试商户");
         content.put("alias_name","xukh商户");
-        content.put("service_phone","18201593401");
+        content.put("service_phone","18768154773");
         content.put("category_id","2015090800051000");
         content.put("id_card_name","徐楷洪");
         content.put("id_card_num","441581199210274296");
@@ -88,6 +152,54 @@ public class PostService {
 
         return content;
     }
+
+    public Map<String,Object> assemblyParamsQueryMerchant(){
+        Map<String, Object> content = Maps.newHashMap();
+        content.put("sub_merchant_id","20170728101532026951");
+        content.put("external_id","XKH06230429150190000");
+
+        return content;
+    }
+
+    public Map<String,Object> assemblyParamsBindBankCard(){
+        Map<String, Object> content = Maps.newHashMap();
+        content.put("sub_merchant_id","20170728101532026951");
+        content.put("bank_card_no","6212261810003977296");
+        //content.put("bank_card_no","");
+        content.put("card_holder","徐楷洪");
+        //content.put("isPublicAccount","0");
+        //content.put("openBank","XKH06230429150190000");
+
+
+        return content;
+    }
+
+    public Map<String,Object> assemblyParamsTradePay(){
+        Map<String, Object> content = Maps.newHashMap();
+        content.put("out_trade_no","XKH2017081000000002");     //服务商单号
+        content.put("notify_url","http://23.105.208.8:8089/test"); //支付成功后回调地址
+        //content.put("scene","bar_code");                    //支付场景 条码支付，取值：bar_code 声波支付，取值：wave_code	bar_code,wave_code
+        content.put("auth_code","288031086243103161");    //支付授权码	28763443825664394
+        content.put("total_amount","0.01");                 //订单总金额，单位为元，精确到小数点后两位
+        //content.put("discountable_amount","20170728101532026951");//参与优惠计算的金额，单位为元
+        //content.put("undiscountable_amount","20170728101532026951");//不参与优惠计算的金额，单位为元
+        content.put("subject","支付测试");                  //订单标题	Iphone6 16G
+        content.put("body","订单描述测试");        //订单描述	Iphone6 16G
+        SubMerchant subMerchant = new SubMerchant();
+        subMerchant.setMerchant_id("20170728101532026951"); //移动支付平台为商户分配的惟一 ID
+        content.put("sub_merchant",subMerchant);
+
+
+        return content;
+    }
+
+
+
+
+
+
+
+
 
 
     //向清算平台发送请求
@@ -148,55 +260,7 @@ public class PostService {
             e.printStackTrace();
         }
 
-        /*OkHttpClient okHttpClient = new OkHttpClient();
 
-
-        FormBody.Builder bodyBuilder = new FormBody.Builder();
-
-        for (String key : data.keySet()) {
-            bodyBuilder.add(key,data.get(key));
-        }
-
-        RequestBody body = bodyBuilder.build();
-        Request request = new Request.Builder().url(url).post(body).build();
-
-        Call call = okHttpClient.newCall(request);
-
-        //异步请求
-        call.enqueue(new Callback() {
-            @Override
-            public void onFailure(Call call, IOException e) {
-                System.out.println("请求失败");
-            }
-
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                Boolean result = Boolean.FALSE;
-                try {
-                    JSONObject responseBody = JSON.parseObject(response.body().toString());
-                    System.out.println(responseBody.toString());
-                    result = responseBody.getBoolean("success");
-                } catch (JSONException e) {
-                    System.out.println("解析返回值失败");
-                }
-
-                if (result) {
-                    System.out.println("这里写逻辑");
-                } else {
-                    System.out.println("这里再写逻辑");
-                }
-            }
-        });*/
     }
 
-
-   /*String result =  {"return_value":{"sub_merchant_id":"20170728101532026951",
-            "external_id":"XKH06230429150135691",
-            "name":"xukh测试商户",
-            "alias_name":"xukh商户",
-            "service_phone":"18201593401",
-            "category_id":"2015063000020189",
-            "liquidator_name":"xukh",
-            "status":"1"},
-            "success":true}*/
 }
