@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6861f4f7-7a2f-4d4b-a119-65c959f0a267" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-api/target/liquidatoradmin_dev_${current.time}/WEB-INF/lib/kh-admin-service-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/kh-admin-api/target/liquidatoradmin_dev_${current.time}/WEB-INF/lib/kh-admin-service-1.0-SNAPSHOT.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-api/src/main/java/com/kh/admin/api/controller/PostController.java" afterPath="$PROJECT_DIR$/kh-admin-api/src/main/java/com/kh/admin/api/controller/PostController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-service/src/main/java/com/kh/admin/service/PostService.java" afterPath="$PROJECT_DIR$/kh-admin-service/src/main/java/com/kh/admin/service/PostService.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -1316,7 +1315,7 @@
       <workItem from="1502072474539" duration="615000" />
       <workItem from="1502078106943" duration="8182000" />
       <workItem from="1502156621687" duration="9969000" />
-      <workItem from="1502326961328" duration="23571000" />
+      <workItem from="1502326961328" duration="23692000" />
     </task>
     <task id="LOCAL-00001" summary="自动生成的配置文件">
       <created>1496239248681</created>
@@ -1402,7 +1401,14 @@
       <option name="project" value="LOCAL" />
       <updated>1502367140279</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="刷卡支付新增参数">
+      <created>1502374358931</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1502374358931</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1438,7 +1444,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="191178000" />
+    <option name="totallyTimeSpent" value="191299000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1532,7 +1538,8 @@
     <MESSAGE value="1" />
     <MESSAGE value="添加注解" />
     <MESSAGE value="邮件  商户入驻,查询,绑卡,刷卡支付" />
-    <option name="LAST_COMMIT_MESSAGE" value="邮件  商户入驻,查询,绑卡,刷卡支付" />
+    <MESSAGE value="刷卡支付新增参数" />
+    <option name="LAST_COMMIT_MESSAGE" value="刷卡支付新增参数" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
