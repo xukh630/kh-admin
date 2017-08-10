@@ -2,46 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6861f4f7-7a2f-4d4b-a119-65c959f0a267" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_mail_mail_1_5_0_b01.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kh-admin-api/src/main/java/com/kh/admin/api/controller/MailController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kh-admin-api/src/main/java/com/kh/admin/api/controller/ThreadController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kh-admin-api/src/main/java/com/kh/admin/api/test/BigDecimalTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kh-admin-common/src/main/java/com/kh/admin/common/utils/ZipUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kh-admin-model/src/main/java/com/kh/admin/model/Publisher.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kh-admin-model/src/main/java/com/kh/admin/model/RedisSubListener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kh-admin-model/src/main/java/com/kh/admin/model/SubThread.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kh-admin-model/src/main/java/com/kh/admin/model/Subscriber.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kh-admin-model/src/main/java/com/kh/admin/model/alipay/SubMerchant.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kh-admin-model/src/main/java/com/kh/admin/model/form/TestForm.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kh-admin-service/src/main/java/com/kh/admin/service/EmailService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kh-admin-service/src/main/java/com/kh/admin/service/TestPublish.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kh-admin-service/src/main/java/com/kh/admin/service/ThreadService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kh-admin-service/src/main/java/com/kh/admin/service/testService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kh-admin-service/src/main/java/com/kh/admin/service/testSubscribe.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-api/target/classes/com/kh/admin/api/test/Test.class" afterPath="$PROJECT_DIR$/kh-admin-api/target/classes/com/kh/admin/api/test/Test.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-api/target/liquidatoradmin_dev_${current.time}/WEB-INF/classes/com/kh/admin/api/test/Test.class" afterPath="$PROJECT_DIR$/kh-admin-api/target/liquidatoradmin_dev_${current.time}/WEB-INF/classes/com/kh/admin/api/test/Test.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-api/target/liquidatoradmin_dev_${current.time}/WEB-INF/lib/kh-admin-common-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/kh-admin-api/target/liquidatoradmin_dev_${current.time}/WEB-INF/lib/kh-admin-common-1.0-SNAPSHOT.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-api/target/liquidatoradmin_dev_${current.time}/WEB-INF/lib/kh-admin-model-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/kh-admin-api/target/liquidatoradmin_dev_${current.time}/WEB-INF/lib/kh-admin-model-1.0-SNAPSHOT.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-api/target/liquidatoradmin_dev_${current.time}/WEB-INF/lib/kh-admin-service-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/kh-admin-api/target/liquidatoradmin_dev_${current.time}/WEB-INF/lib/kh-admin-service-1.0-SNAPSHOT.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/kh_admin_api_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/kh_admin_api_war_exploded.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-api/kh-admin-api.iml" afterPath="$PROJECT_DIR$/kh-admin-api/kh-admin-api.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-api/src/main/java/com/kh/admin/api/controller/PostController.java" afterPath="$PROJECT_DIR$/kh-admin-api/src/main/java/com/kh/admin/api/controller/PostController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-api/src/main/java/com/kh/admin/api/test/Test.java" afterPath="$PROJECT_DIR$/kh-admin-api/src/main/java/com/kh/admin/api/test/Test.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-api/src/main/resources/config/systemConfig.properties" afterPath="$PROJECT_DIR$/kh-admin-api/src/main/resources/config/systemConfig.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-api/src/main/resources/spring/spring-context.xml" afterPath="$PROJECT_DIR$/kh-admin-api/src/main/resources/spring/spring-context.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-api/target/classes/config/systemConfig.properties" afterPath="$PROJECT_DIR$/kh-admin-api/target/classes/config/systemConfig.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-api/target/classes/spring/spring-context.xml" afterPath="$PROJECT_DIR$/kh-admin-api/target/classes/spring/spring-context.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-api/target/liquidatoradmin_dev_${current.time}/WEB-INF/classes/config/systemConfig.properties" afterPath="$PROJECT_DIR$/kh-admin-api/target/liquidatoradmin_dev_${current.time}/WEB-INF/classes/config/systemConfig.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-api/target/liquidatoradmin_dev_${current.time}/WEB-INF/classes/spring/spring-context.xml" afterPath="$PROJECT_DIR$/kh-admin-api/target/liquidatoradmin_dev_${current.time}/WEB-INF/classes/spring/spring-context.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-common/kh-admin-common.iml" afterPath="$PROJECT_DIR$/kh-admin-common/kh-admin-common.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-dao/kh-admin-dao.iml" afterPath="$PROJECT_DIR$/kh-admin-dao/kh-admin-dao.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-model/kh-admin-model.iml" afterPath="$PROJECT_DIR$/kh-admin-model/kh-admin-model.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-service/kh-admin-service.iml" afterPath="$PROJECT_DIR$/kh-admin-service/kh-admin-service.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-service/src/main/java/com/kh/admin/service/PostService.java" afterPath="$PROJECT_DIR$/kh-admin-service/src/main/java/com/kh/admin/service/PostService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin-service/src/main/java/com/kh/admin/service/RedisService.java" afterPath="$PROJECT_DIR$/kh-admin-service/src/main/java/com/kh/admin/service/RedisService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kh-admin.iml" afterPath="$PROJECT_DIR$/kh-admin.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -63,8 +26,8 @@
       <file leaf-file-name="PostController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/kh-admin-api/src/main/java/com/kh/admin/api/controller/PostController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="29" column="5" lean-forward="false" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+            <state relative-caret-position="42">
+              <caret line="37" column="65" lean-forward="true" selection-start-line="37" selection-start-column="65" selection-end-line="37" selection-end-column="65" />
               <folding>
                 <element signature="e#531#532#0" expanded="true" />
                 <element signature="e#572#573#0" expanded="true" />
@@ -72,8 +35,8 @@
                 <element signature="e#687#688#0" expanded="true" />
                 <element signature="e#757#758#0" expanded="true" />
                 <element signature="e#799#800#0" expanded="true" />
-                <element signature="e#861#862#0" expanded="true" />
-                <element signature="e#899#900#0" expanded="true" />
+                <element signature="e#1173#1174#0" expanded="true" />
+                <element signature="e#1213#1214#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -82,8 +45,8 @@
       <file leaf-file-name="PostService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/kh-admin-service/src/main/java/com/kh/admin/service/PostService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="102" column="4" lean-forward="true" selection-start-line="102" selection-start-column="4" selection-end-line="102" selection-end-column="4" />
+            <state relative-caret-position="110">
+              <caret line="133" column="0" lean-forward="false" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -242,8 +205,8 @@
         <option value="$PROJECT_DIR$/kh-admin-model/src/main/java/com/kh/admin/model/Publisher.java" />
         <option value="$PROJECT_DIR$/kh-admin-service/src/main/java/com/kh/admin/service/ThreadService.java" />
         <option value="$PROJECT_DIR$/kh-admin-model/src/main/java/com/kh/admin/model/alipay/SubMerchant.java" />
-        <option value="$PROJECT_DIR$/kh-admin-api/src/main/java/com/kh/admin/api/controller/PostController.java" />
         <option value="$PROJECT_DIR$/kh-admin-service/src/main/java/com/kh/admin/service/PostService.java" />
+        <option value="$PROJECT_DIR$/kh-admin-api/src/main/java/com/kh/admin/api/controller/PostController.java" />
       </list>
     </option>
   </component>
@@ -321,8 +284,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="3" />
-    <option name="y" value="6" />
+    <option name="x" value="16" />
+    <option name="y" value="11" />
     <option name="width" value="1370" />
     <option name="height" value="720" />
   </component>
@@ -1353,7 +1316,7 @@
       <workItem from="1502072474539" duration="615000" />
       <workItem from="1502078106943" duration="8182000" />
       <workItem from="1502156621687" duration="9969000" />
-      <workItem from="1502326961328" duration="19185000" />
+      <workItem from="1502326961328" duration="23571000" />
     </task>
     <task id="LOCAL-00001" summary="自动生成的配置文件">
       <created>1496239248681</created>
@@ -1432,7 +1395,14 @@
       <option name="project" value="LOCAL" />
       <updated>1501596249787</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="邮件  商户入驻,查询,绑卡,刷卡支付">
+      <created>1502367140279</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1502367140279</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1468,7 +1438,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="186792000" />
+    <option name="totallyTimeSpent" value="191178000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1480,8 +1450,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="3" y="6" width="1370" height="720" extended-state="0" />
-    <editor active="true" />
+    <frame x="16" y="11" width="1370" height="720" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1495,7 +1464,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4334471" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4334471" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22354949" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1562,7 +1531,8 @@
     <MESSAGE value="单元测试" />
     <MESSAGE value="1" />
     <MESSAGE value="添加注解" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加注解" />
+    <MESSAGE value="邮件  商户入驻,查询,绑卡,刷卡支付" />
+    <option name="LAST_COMMIT_MESSAGE" value="邮件  商户入驻,查询,绑卡,刷卡支付" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1573,8 +1543,14 @@
           <properties />
           <option name="timeStamp" value="11" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/kh-admin-service/src/main/java/com/kh/admin/service/PostService.java</url>
+          <line>132</line>
+          <properties />
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="29" />
+      <option name="time" value="31" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1738,6 +1714,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="107">
           <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1745,6 +1722,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
           <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1752,6 +1730,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-504">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1766,6 +1745,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="163">
           <caret line="293" column="44" lean-forward="false" selection-start-line="293" selection-start-column="44" selection-end-line="293" selection-end-column="44" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1781,6 +1761,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="267">
           <caret line="29" column="1" lean-forward="false" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1928,8 +1911,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/kh-admin-api/src/main/java/com/kh/admin/api/controller/PostController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="29" column="5" lean-forward="false" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+        <state relative-caret-position="42">
+          <caret line="37" column="65" lean-forward="true" selection-start-line="37" selection-start-column="65" selection-end-line="37" selection-end-column="65" />
           <folding>
             <element signature="e#531#532#0" expanded="true" />
             <element signature="e#572#573#0" expanded="true" />
@@ -1937,16 +1920,16 @@
             <element signature="e#687#688#0" expanded="true" />
             <element signature="e#757#758#0" expanded="true" />
             <element signature="e#799#800#0" expanded="true" />
-            <element signature="e#861#862#0" expanded="true" />
-            <element signature="e#899#900#0" expanded="true" />
+            <element signature="e#1173#1174#0" expanded="true" />
+            <element signature="e#1213#1214#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/kh-admin-service/src/main/java/com/kh/admin/service/PostService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="102" column="4" lean-forward="true" selection-start-line="102" selection-start-column="4" selection-end-line="102" selection-end-column="4" />
+        <state relative-caret-position="110">
+          <caret line="133" column="0" lean-forward="false" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

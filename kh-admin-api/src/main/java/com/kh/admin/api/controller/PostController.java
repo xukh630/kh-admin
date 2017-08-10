@@ -34,9 +34,20 @@ public class PostController {
         postService.bindBankCard();
     }
 
+    /**
+     * 必须在authCode 没有改变之前完成刷卡   否则pay_platform_order_sn 为空 无法完成支付
+     * @param outTradeNo
+     * @param authCode
+     */
     @RequestMapping("/tradePay")
-    public void tradePay(){
-        postService.tradePay();
+    public void tradePay(String outTradeNo,
+                         String authCode){
+        postService.tradePay(outTradeNo,authCode);
+    }
+
+    @RequestMapping("/orderQuery")
+    public void orderQuery(){
+        postService.orderQuery();
     }
 
 }

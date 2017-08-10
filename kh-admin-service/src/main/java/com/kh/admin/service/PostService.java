@@ -85,11 +85,27 @@ public class PostService {
     }
 
     //支付宝统一收单交易支付(刷卡)
-    public void tradePay(){
+    public void tradePay(String outTradeNo,
+                         String authCode){
         Map<String, String> data = Maps.newHashMap();
-        Map<String, Object> content = assemblyParamsTradePay();
+        Map<String, Object> content = assemblyParamsTradePay(outTradeNo,authCode);
         data.put("app_id","20170630091233203");
         data.put("method","fshows.liquidation.submerchant.alipay.trade.pay");
+        data.put("version","1.0");
+        data.put("content", JSON.toJSONString(content));
+
+        //加签
+        addSign(data);
+
+        //发送请求
+        sendPost(data);
+    }
+
+    public void orderQuery(){
+        Map<String, String> data = Maps.newHashMap();
+        Map<String, Object> content = assemblyParamsOrderQuery();
+        data.put("app_id","20170630091233203");
+        data.put("method","fshows.liquidation.alipay.trade.query");
         data.put("version","1.0");
         data.put("content", JSON.toJSONString(content));
 
@@ -174,12 +190,13 @@ public class PostService {
         return content;
     }
 
-    public Map<String,Object> assemblyParamsTradePay(){
+    public Map<String,Object> assemblyParamsTradePay(String outTradeNo,
+                                                     String authCode){
         Map<String, Object> content = Maps.newHashMap();
-        content.put("out_trade_no","XKH2017081000000002");     //服务商单号
+        content.put("out_trade_no",outTradeNo);     //服务商单号
         content.put("notify_url","http://23.105.208.8:8089/test"); //支付成功后回调地址
         //content.put("scene","bar_code");                    //支付场景 条码支付，取值：bar_code 声波支付，取值：wave_code	bar_code,wave_code
-        content.put("auth_code","288031086243103161");    //支付授权码	28763443825664394
+        content.put("auth_code",authCode);    //支付授权码	28763443825664394
         content.put("total_amount","0.01");                 //订单总金额，单位为元，精确到小数点后两位
         //content.put("discountable_amount","20170728101532026951");//参与优惠计算的金额，单位为元
         //content.put("undiscountable_amount","20170728101532026951");//不参与优惠计算的金额，单位为元
@@ -189,6 +206,14 @@ public class PostService {
         subMerchant.setMerchant_id("20170728101532026951"); //移动支付平台为商户分配的惟一 ID
         content.put("sub_merchant",subMerchant);
 
+
+        return content;
+    }
+
+    public Map<String, Object> assemblyParamsOrderQuery(){
+        Map<String, Object> content = Maps.newHashMap();
+        //content.put("out_trade_no","XKH2017081000000002");     //服务商单号
+        content.put("trade_no","2017081017353202755026704811");     //服务商单号
 
         return content;
     }
