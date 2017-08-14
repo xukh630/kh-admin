@@ -3,18 +3,14 @@ package com.kh.admin.service;/**
  */
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONException;
-import com.alibaba.fastjson.JSONObject;
 import com.alipay.api.AlipayApiException;
 import com.alipay.api.internal.util.AlipaySignature;
 import com.kh.admin.common.result.ResultModle;
 import com.kh.admin.common.utils.HttpUtil;
 import com.kh.admin.model.alipay.SubMerchant;
-import okhttp3.*;
-import org.apache.http.client.methods.HttpPost;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.testng.collections.Maps;
-import sun.net.www.http.HttpClient;
 
 import java.io.IOException;
 import java.util.Map;
@@ -37,7 +33,7 @@ public class PostService {
             "7EPWRNREMaIX";
 
     //商户入驻
-    public void addMerchant(){
+    public ResultModle addMerchant(){
         Map<String, String> data = Maps.newHashMap();
         Map<String, Object> content = assemblyParamsAddMerchant();
         data.put("app_id","20170630091233203");
@@ -49,11 +45,11 @@ public class PostService {
         addSign(data);
 
         //发送请求
-        sendPost(data);
+        return sendPost(data);
     }
 
     //查询商户
-    public void queryMerchant(){
+    public ResultModle queryMerchant(){
         Map<String, String> data = Maps.newHashMap();
         Map<String, Object> content = assemblyParamsQueryMerchant();
         data.put("app_id","20170630091233203");
@@ -65,11 +61,11 @@ public class PostService {
         addSign(data);
 
         //发送请求
-        sendPost(data);
+        return sendPost(data);
     }
 
     //商户绑卡
-    public void bindBankCard(){
+    public ResultModle bindBankCard(){
         Map<String, String> data = Maps.newHashMap();
         Map<String, Object> content = assemblyParamsBindBankCard();
         data.put("app_id","20170630091233203");
@@ -81,14 +77,22 @@ public class PostService {
         addSign(data);
 
         //发送请求
-        sendPost(data);
+        return sendPost(data);
     }
 
-    //支付宝统一收单交易支付(刷卡)
-    public void tradePay(String outTradeNo,
-                         String authCode){
+    /**
+     * 支付宝统一收单交易支付(刷卡)
+     *
+     * @param outTradeNo
+     * @param authCode
+     * @param totalAmount
+     * @return
+     */
+    public ResultModle tradePay(String outTradeNo,
+                                String authCode,
+                                String totalAmount){
         Map<String, String> data = Maps.newHashMap();
-        Map<String, Object> content = assemblyParamsTradePay(outTradeNo,authCode);
+        Map<String, Object> content = assemblyParamsTradePay(outTradeNo,authCode,totalAmount);
         data.put("app_id","20170630091233203");
         data.put("method","fshows.liquidation.submerchant.alipay.trade.pay");
         data.put("version","1.0");
@@ -98,12 +102,37 @@ public class PostService {
         addSign(data);
 
         //发送请求
-        sendPost(data);
+        return sendPost(data);
     }
 
-    public void orderQuery(){
+    //支付宝统一收单交易支付(刷卡)
+    public ResultModle tradePrecreate(String outTradeNo,
+
+                                      String totalAmount){
         Map<String, String> data = Maps.newHashMap();
-        Map<String, Object> content = assemblyParamsOrderQuery();
+        Map<String, Object> content = assemblyParamsTradePrecreate(outTradeNo,totalAmount);
+        data.put("app_id","20170630091233203");
+        data.put("method","fshows.liquidation.submerchant.alipay.trade.precreate");
+        data.put("version","1.0");
+        data.put("content", JSON.toJSONString(content));
+
+        //加签
+        addSign(data);
+
+        //发送请求
+        return sendPost(data);
+    }
+
+    /**
+     * 订单查询
+     *
+     * @param outTradeNo
+     * @param tradeNo
+     * @return
+     */
+    public ResultModle orderQuery(String outTradeNo,String tradeNo){
+        Map<String, String> data = Maps.newHashMap();
+        Map<String, Object> content = assemblyParamsOrderQuery(outTradeNo,tradeNo);
         data.put("app_id","20170630091233203");
         data.put("method","fshows.liquidation.alipay.trade.query");
         data.put("version","1.0");
@@ -113,9 +142,105 @@ public class PostService {
         addSign(data);
 
         //发送请求
-        sendPost(data);
+        return sendPost(data);
     }
 
+    /**
+     * 对账单下载
+     *
+     * @param billDate
+     * @param payPlatform
+     * @param fileType
+     * @return
+     */
+    public ResultModle downloadBill(String billDate,Integer payPlatform,Integer fileType){
+        Map<String, String> data = Maps.newHashMap();
+        Map<String, Object> content = assemblyParamsDownloadBill(billDate, payPlatform, fileType);
+        data.put("app_id","20170630091233203");
+        data.put("method","fshows.liquidation.finance.downloadbill");
+        data.put("version","1.0");
+        data.put("content", JSON.toJSONString(content));
+
+        //加签
+        addSign(data);
+
+        //发送请求
+        return sendPost(data);
+    }
+
+    /**
+     * 订单撤销      刷卡支付用
+     *
+     * @param outTradeNo
+     * @param tradeNo
+     * @return
+     */
+    public ResultModle orderReverse(String outTradeNo,String tradeNo){
+        Map<String, String> data = Maps.newHashMap();
+        Map<String, Object> content = assemblyParamsOrderReverse(outTradeNo,tradeNo);
+        data.put("app_id","20170630091233203");
+        data.put("method","fshows.liquidation.order.reverse");
+        data.put("version","1.0");
+        data.put("content", JSON.toJSONString(content));
+
+        //加签
+        addSign(data);
+
+        //发送请求
+        return sendPost(data);
+    }
+
+    /**
+     * 订单关闭接口      未支付的订单使用
+     *
+     * @param outTradeNo
+     * @param tradeNo
+     * @return
+     */
+    public ResultModle orderClose(String outTradeNo, String tradeNo){
+        Map<String, String> data = Maps.newHashMap();
+        Map<String, Object> content = assemblyParamsOrderClose(outTradeNo,tradeNo);
+        data.put("app_id","20170630091233203");
+        data.put("method","fshows.liquidation.order.close");
+        data.put("version","1.0");
+        data.put("content", JSON.toJSONString(content));
+
+        //加签
+        addSign(data);
+
+        //发送请求
+        return sendPost(data);
+    }
+
+    public ResultModle refund(String outTradeNo, String tradeNo,String outRefundNo){
+        Map<String, String> data = Maps.newHashMap();
+        Map<String, Object> content = assemblyParamsRefund(outTradeNo,tradeNo,outRefundNo);
+        data.put("app_id","20170630091233203");
+        data.put("method","fshows.liquidation.pay.refund");
+        data.put("version","1.0");
+        data.put("content", JSON.toJSONString(content));
+
+        //加签
+        addSign(data);
+
+        //发送请求
+        return sendPost(data);
+    }
+
+    public ResultModle H5(String outTradeNo, String totalAmount,String buyerLogonId){
+        Map<String, String> data = Maps.newHashMap();
+        Map<String, Object> content = assemblyParamsH5(outTradeNo,totalAmount,buyerLogonId);
+        data.put("app_id","20170630091233203");
+        data.put("method","fshows.liquidation.submerchant.alipay.trade.create");
+        data.put("version","1.0");
+        data.put("content", JSON.toJSONString(content));
+
+        //加签
+        addSign(data);
+
+        //发送请求
+        return sendPost(data);
+    }
 
 
     public void addSign(Map<String, String> data){
@@ -128,17 +253,17 @@ public class PostService {
         }
     }
 
-    public void sendPost(Map<String, String> data){
+    public ResultModle sendPost(Map<String, String> data){
         try {
             String post = HttpUtil.post(url, null, data);
             ResultModle resultModle = JSON.parseObject(post, ResultModle.class);
-            if (resultModle.isSuccess()) {
-                Map returnValue = (Map) resultModle.getReturnValue();
-                System.out.println(returnValue);
-            }
+
+            return resultModle;
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        return ResultModle.serverError();
     }
 
 
@@ -191,17 +316,19 @@ public class PostService {
     }
 
     public Map<String,Object> assemblyParamsTradePay(String outTradeNo,
-                                                     String authCode){
+                                                     String authCode,
+                                                     String totalAmount){
+
         Map<String, Object> content = Maps.newHashMap();
         content.put("out_trade_no",outTradeNo);     //服务商单号
         content.put("notify_url","http://23.105.208.8:8089/test"); //支付成功后回调地址
         //content.put("scene","bar_code");                    //支付场景 条码支付，取值：bar_code 声波支付，取值：wave_code	bar_code,wave_code
         content.put("auth_code",authCode);    //支付授权码	28763443825664394
-        content.put("total_amount","0.01");                 //订单总金额，单位为元，精确到小数点后两位
+        content.put("total_amount",totalAmount);                 //订单总金额，单位为元，精确到小数点后两位
         //content.put("discountable_amount","20170728101532026951");//参与优惠计算的金额，单位为元
         //content.put("undiscountable_amount","20170728101532026951");//不参与优惠计算的金额，单位为元
-        content.put("subject","支付测试");                  //订单标题	Iphone6 16G
-        content.put("body","订单描述测试");        //订单描述	Iphone6 16G
+        content.put("subject","刷卡支付测试");                  //订单标题	Iphone6 16G
+        content.put("body","刷卡订单描述测试");        //订单描述	Iphone6 16G
         SubMerchant subMerchant = new SubMerchant();
         subMerchant.setMerchant_id("20170728101532026951"); //移动支付平台为商户分配的惟一 ID
         content.put("sub_merchant",subMerchant);
@@ -210,14 +337,94 @@ public class PostService {
         return content;
     }
 
-    public Map<String, Object> assemblyParamsOrderQuery(){
+    public Map<String,Object> assemblyParamsTradePrecreate(String outTradeNo,
+                                                           String totalAmount){
+
         Map<String, Object> content = Maps.newHashMap();
-        //content.put("out_trade_no","XKH2017081000000002");     //服务商单号
-        content.put("trade_no","2017081017353202755026704811");     //服务商单号
+        content.put("out_trade_no",outTradeNo);     //服务商单号
+        content.put("notify_url","http://23.105.208.8:8089/test"); //支付成功后回调地址
+        //content.put("scene","bar_code");                    //支付场景 条码支付，取值：bar_code 声波支付，取值：wave_code	bar_code,wave_code
+        content.put("total_amount",totalAmount);                 //订单总金额，单位为元，精确到小数点后两位
+        //content.put("discountable_amount","20170728101532026951");//参与优惠计算的金额，单位为元
+        //content.put("undiscountable_amount","20170728101532026951");//不参与优惠计算的金额，单位为元
+        content.put("subject","扫码支付测试");                  //订单标题	Iphone6 16G
+        content.put("body","扫码订单描述测试");        //订单描述	Iphone6 16G
+        SubMerchant subMerchant = new SubMerchant();
+        subMerchant.setMerchant_id("20170728101532026951"); //移动支付平台为商户分配的惟一 ID
+        content.put("sub_merchant",subMerchant);
+
 
         return content;
     }
 
+
+    public Map<String, Object> assemblyParamsOrderQuery(String outTradeNo,String tradeNo){
+        Map<String, Object> content = Maps.newHashMap();
+        content.put("out_trade_no",outTradeNo);     //liquidatorOrderSn
+        content.put("trade_no",tradeNo);     //orderSn
+
+        return content;
+    }
+
+    public Map<String, Object> assemblyParamsDownloadBill(String billDate,Integer payPlatform,Integer fileType){
+        Map<String, Object> content = Maps.newHashMap();
+        content.put("bill_date",billDate);
+        content.put("pay_platform",payPlatform);
+        content.put("file_type",fileType);
+
+        return content;
+    }
+
+    public Map<String, Object> assemblyParamsOrderReverse(String outTradeNo,String tradeNo){
+        Map<String, Object> content = Maps.newHashMap();
+        content.put("out_trade_no",outTradeNo);     //liquidatorOrderSn
+        content.put("trade_no",tradeNo);     //orderSn
+
+        return content;
+    }
+
+    public Map<String, Object> assemblyParamsOrderClose(String outTradeNo,String tradeNo){
+        Map<String, Object> content = Maps.newHashMap();
+        content.put("out_trade_no",outTradeNo);     //liquidatorOrderSn
+        content.put("trade_no",tradeNo);     //orderSn
+
+        return content;
+    }
+
+    public Map<String, Object> assemblyParamsRefund(String outTradeNo,String tradeNo,String outRefundNo){
+        Map<String, Object> content = Maps.newHashMap();
+        content.put("out_trade_no",outTradeNo);     //liquidatorOrderSn
+        content.put("trade_no",tradeNo);     //orderSn
+        content.put("out_refund_no",outRefundNo);
+
+        return content;
+    }
+
+    public Map<String,Object> assemblyParamsH5(String outTradeNo,
+                                               String totalAmount,
+                                               String buyerLogonId){
+
+        Map<String, Object> content = Maps.newHashMap();
+        content.put("out_trade_no",outTradeNo);     //服务商单号
+        //content.put("notify_url","http://23.105.208.8:8089/test"); //支付成功后回调地址
+        //content.put("scene","bar_code");                    //支付场景 条码支付，取值：bar_code 声波支付，取值：wave_code	bar_code,wave_code
+        content.put("total_amount",totalAmount);                 //订单总金额，单位为元，精确到小数点后两位
+        //content.put("discountable_amount","20170728101532026951");//参与优惠计算的金额，单位为元
+        //content.put("undiscountable_amount","20170728101532026951");//不参与优惠计算的金额，单位为元
+        content.put("subject","H5支付测试");                  //订单标题	Iphone6 16G
+        content.put("body","H5订单描述测试");        //订单描述	Iphone6 16G
+        SubMerchant subMerchant = new SubMerchant();
+        subMerchant.setMerchant_id("20170728101532026951"); //移动支付平台为商户分配的惟一 ID
+        content.put("sub_merchant",subMerchant);
+
+        //buyer_logon_id  buyer_id
+        content.put("buyer_logon_id",buyerLogonId);
+
+        //content.put("buyer_id",subMerchant);
+
+
+        return content;
+    }
 
 
 
