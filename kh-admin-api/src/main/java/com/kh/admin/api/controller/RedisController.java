@@ -2,6 +2,7 @@ package com.kh.admin.api.controller;/**
  * Created by Administrator on 2017/7/19.
  */
 
+import com.kh.admin.common.result.ResultModle;
 import com.kh.admin.common.utils.ResourceUtil;
 import com.kh.admin.service.RedisService;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -36,8 +37,10 @@ public class RedisController {
     }
 
     @RequestMapping("/test")
-    public void test(){
-
+    public ResultModle test(){
+        return redisService.redisTemplate();
     }
+
+
 
 }

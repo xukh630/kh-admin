@@ -212,6 +212,14 @@ public class PostService {
         return sendPost(data);
     }
 
+    /**
+     * 退款
+     *
+     * @param outTradeNo
+     * @param tradeNo
+     * @param outRefundNo
+     * @return
+     */
     public ResultModle refund(String outTradeNo, String tradeNo,String outRefundNo){
         Map<String, String> data = Maps.newHashMap();
         Map<String, Object> content = assemblyParamsRefund(outTradeNo,tradeNo,outRefundNo);
@@ -232,6 +240,21 @@ public class PostService {
         Map<String, Object> content = assemblyParamsH5(outTradeNo,totalAmount,buyerLogonId);
         data.put("app_id","20170630091233203");
         data.put("method","fshows.liquidation.submerchant.alipay.trade.create");
+        data.put("version","1.0");
+        data.put("content", JSON.toJSONString(content));
+
+        //加签
+        addSign(data);
+
+        //发送请求
+        return sendPost(data);
+    }
+
+    public ResultModle refundQuery(String outTradeNo, String tradeNo,String outRefundNo,String refundNo){
+        Map<String, String> data = Maps.newHashMap();
+        Map<String, Object> content = assemblyParamsRefundQuery(outTradeNo,tradeNo,outRefundNo,refundNo);
+        data.put("app_id","20170630091233203");
+        data.put("method","fshows.liquidation.pay.refund.query");
         data.put("version","1.0");
         data.put("content", JSON.toJSONString(content));
 
@@ -286,7 +309,7 @@ public class PostService {
         content.put("district","余杭区");
         content.put("card_no","6227002********6789");
         content.put("contact_type","LEGAL_PERSON");
-        content.put("business_license","12343242");
+        content.put("business_license","510107601109052");
         content.put("business_license_type","NATIONAL_LEGAL");
         content.put("contact_email","12345@qq.com");
         content.put("contact_name","楷洪");
@@ -321,7 +344,7 @@ public class PostService {
 
         Map<String, Object> content = Maps.newHashMap();
         content.put("out_trade_no",outTradeNo);     //服务商单号
-        content.put("notify_url","http://23.105.208.8:8089/test"); //支付成功后回调地址
+        content.put("notify_url","http://117.149.26.151:1234/callback/alipay"); //支付成功后回调地址
         //content.put("scene","bar_code");                    //支付场景 条码支付，取值：bar_code 声波支付，取值：wave_code	bar_code,wave_code
         content.put("auth_code",authCode);    //支付授权码	28763443825664394
         content.put("total_amount",totalAmount);                 //订单总金额，单位为元，精确到小数点后两位
@@ -422,6 +445,16 @@ public class PostService {
 
         //content.put("buyer_id",subMerchant);
 
+
+        return content;
+    }
+
+    public Map<String, Object> assemblyParamsRefundQuery(String outTradeNo,String tradeNo,String outRefundNo,String refundNo){
+        Map<String, Object> content = Maps.newHashMap();
+        content.put("out_trade_no",outTradeNo);     //liquidatorOrderSn
+        content.put("trade_no",tradeNo);     //orderSn
+        content.put("out_refund_no",outRefundNo);
+        content.put("refund_no",refundNo);
 
         return content;
     }

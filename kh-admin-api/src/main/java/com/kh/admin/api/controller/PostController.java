@@ -22,16 +22,31 @@ public class PostController {
     @Resource
     private PostService postService;
 
+    /**
+     * 新增商户
+     *
+     * @return
+     */
     @RequestMapping("/addMerchant")
     public ResultModle addMerchant(){
         return postService.addMerchant();
     }
 
+    /**
+     * 查询商户
+     *
+     * @return
+     */
     @RequestMapping("/queryMerchant")
     public ResultModle queryMerchant(){
         return postService.queryMerchant();
     }
 
+    /**
+     * 商户绑卡
+     *
+     * @return
+     */
     @RequestMapping("/bindBankCard")
     public ResultModle bindBankCard(){
         return postService.bindBankCard();
@@ -140,6 +155,14 @@ public class PostController {
         return postService.refund(outTradeNo,tradeNo,outRefundNo);
     }
 
+    /**
+     * H5支付
+     *
+     * @param outTradeNo
+     * @param totalAmount
+     * @param buyerLogonId
+     * @return
+     */
     @RequestMapping("/H5")
     public ResultModle H5(String outTradeNo,
                           String totalAmount,
@@ -148,4 +171,87 @@ public class PostController {
         return postService.H5(outTradeNo,totalAmount,buyerLogonId);
     }
 
+    /**
+     * 退款查询
+     *
+     * @param outTradeNo
+     * @param tradeNo
+     * @param outRefundNo
+     * @param refundNo
+     * @return
+     */
+    @RequestMapping("/refundQuery")
+    public ResultModle refundQuery(@RequestParam(value = "outTradeNo" ,required = false)String outTradeNo,
+                                   @RequestParam(value = "tradeNo" ,required = false) String tradeNo,
+                                   @RequestParam(value = "outRefundNo" ,required = false) String outRefundNo,
+                                   @RequestParam(value = "refundNo" ,required = false) String refundNo){
+
+
+        return postService.refundQuery(outTradeNo,tradeNo,outRefundNo,refundNo);
+    }
+
+    @RequestMapping("/wxPay")
+    public ResultModle wxPay(@RequestParam(value = "subMerchantId" ,required = true)String subMerchantId,
+                                   @RequestParam(value = "body" ,required = true) String body,
+                                   @RequestParam(value = "outTradeNo" ,required = true) String outRefundNo,
+                                   @RequestParam(value = "totalFee" ,required = true) String totalFee,
+                                   @RequestParam(value = "subOpenid" ,required = true) String subOpenid,
+                                   @RequestParam(value = "spbillCreateIp" ,required = true) String spbillCreateIp,
+                                   @RequestParam(value = "notifyUrl" ,required = false) String notifyUrl,
+                                   @RequestParam(value = "subAppid" ,required = true) String subAppid,
+                                   @RequestParam(value = "goodsTag" ,required = true) String goodsTag){
+
+
+        return null;
+    }
+
+    @RequestMapping("/wxTrade")
+    public ResultModle wxTrade(@RequestParam(value = "body" ,required = true) String body,
+                               @RequestParam(value = "outTradeNo" ,required = true) String outRefundNo,
+                               @RequestParam(value = "totalFee" ,required = true) String totalFee,
+                               @RequestParam(value = "spbillCreateIp" ,required = true) String spbillCreateIp,
+                               @RequestParam(value = "authCode" ,required = true) String authCode,
+                               @RequestParam(value = "storeId" ,required = true) String storeId,
+                               @RequestParam(value = "subAppid" ,required = true) String subAppid,
+                               @RequestParam(value = "goodsTag" ,required = true) String goodsTag){
+
+
+        return null;
+    }
+
+    @RequestMapping("/wxPrecreate")
+    public ResultModle wxPrecreate(@RequestParam(value = "body" ,required = true) String body,
+                                   @RequestParam(value = "outTradeNo" ,required = true) String outRefundNo,
+                                   @RequestParam(value = "totalFee" ,required = true) String totalFee,
+                                   @RequestParam(value = "spbillCreateIp" ,required = true) String spbillCreateIp,
+                                   @RequestParam(value = "notifyUrl" ,required = false) String notifyUrl,
+                                   @RequestParam(value = "storeId" ,required = true) String storeId,
+                                   @RequestParam(value = "subAppId" ,required = false) String subAppId,
+                                   @RequestParam(value = "subAppid" ,required = false) String subAppid,
+                                   @RequestParam(value = "goodsTag" ,required = false) String goodsTag){
+
+
+        return null;
+    }
+
+    @RequestMapping("/wxApp")
+    public ResultModle wxApp(@RequestParam(value = "subMerchantId" ,required = true) String subMerchantId,
+                             @RequestParam(value = "body" ,required = true) String body,
+                             @RequestParam(value = "outTradeNo" ,required = true) String outRefundNo,
+                             @RequestParam(value = "totalFee" ,required = true) String totalFee,
+                             @RequestParam(value = "spbillCreateIp" ,required = true) String spbillCreateIp,
+                             @RequestParam(value = "notifyUrl" ,required = false) String notifyUrl,
+                             @RequestParam(value = "goodsTag" ,required = false) String goodsTag){
+
+
+        return null;
+    }
+
+    @RequestMapping("/wxH5")
+    public ResultModle wxH5(@RequestParam(value = "prepayId" ,required = true) String prepayId,
+                            @RequestParam(value = "callbackUrl" ,required = false) String callbackUrl){
+
+
+        return null;
+    }
 }

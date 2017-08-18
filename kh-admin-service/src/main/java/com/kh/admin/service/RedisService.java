@@ -2,6 +2,7 @@ package com.kh.admin.service;/**
  * Created by Administrator on 2017/7/19.
  */
 
+import com.kh.admin.common.result.ResultModle;
 import com.kh.admin.common.utils.ResourceUtil;
 import com.kh.admin.model.Publisher;
 import com.kh.admin.model.SubThread;
@@ -203,10 +204,29 @@ public class RedisService {
         //两个发布者  发布消息
         jedis2.publish("channel1","this is channel1");
         jedis3.publish("channel2","this is channel2");
+
+
+        String key = "key";
+        String liquidatorId = "liquidatorId";
+
+        String redisKey = key + liquidatorId + "Lock";
+
+
+
+
     }
 
-    public static void main(String[] args) {
-        new Thread(new SubThread()).start();
-        new Thread(new Publisher()).start();
+    public ResultModle redisTemplate(){
+        String redisKey = "redisKey";
+
+        Boolean aBoolean = stringRedisTemplate.opsForValue().setIfAbsent(redisKey, "1");
+
+        if (!aBoolean) {
+            return ResultModle.commonError("redisKey已存在");
+        }
+
+        stringRedisTemplate.opsForValue().set("redisKey","1");
+        return ResultModle.success("true");
     }
+
 }
