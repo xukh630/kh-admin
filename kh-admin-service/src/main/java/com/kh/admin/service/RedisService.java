@@ -228,5 +228,12 @@ public class RedisService {
         stringRedisTemplate.opsForValue().set("redisKey","1");
         return ResultModle.success("true");
     }
+//-----------------------------------------------------------------------------------------------------------
+    //并发锁   setIfAbsent
 
+    public ResultModle redisLock(){
+        stringRedisTemplate.opsForValue().setIfAbsent("redisKey","1");
+        stringRedisTemplate.opsForValue().set("redisKey","2",1,TimeUnit.DAYS);
+        return ResultModle.success("true");
+    }
 }

@@ -190,6 +190,12 @@ public class PostController {
         return postService.refundQuery(outTradeNo,tradeNo,outRefundNo,refundNo);
     }
 
+    @RequestMapping("/wxAddMerchant")
+    public ResultModle wxAddMerchant(){
+
+        return postService.wxAddMerchant();
+    }
+
     @RequestMapping("/wxPay")
     public ResultModle wxPay(@RequestParam(value = "subMerchantId" ,required = true)String subMerchantId,
                                    @RequestParam(value = "body" ,required = true) String body,
@@ -252,6 +258,18 @@ public class PostController {
                             @RequestParam(value = "callbackUrl" ,required = false) String callbackUrl){
 
 
+        return null;
+    }
+
+    @RequestMapping("/jd")
+    public ResultModle jdPay(String outTradeNo,
+                             String totalFee) {
+
+        return postService.jdPay(outTradeNo,totalFee);
+    }
+
+    @RequestMapping("/bestPay")
+    public ResultModle bestPay(){
         return null;
     }
 }
