@@ -24,14 +24,19 @@ public class PostService {
 
     String url = "https://openapi-liquidation-test.51fubei.com/gateway"; //请求地址
     String urld= "http://www.alipaytech.com.cn/alimock-web-gateway/mock/gateway.do";
-    String privateKey = "MIIBVQIBADANBgkqhkiG9w0BAQEFAASCAT8wggE7AgEAAkEAtLmUANBqioCSvB81\n" +
-            "EsHlClyjTc+P9m09Lvbt/HALp3tJMb4BzLTFu7OT95yXVV0/VeUpG3tTlZYrAR+X\n" +
-            "fOwIqwIDAQABAkAcdVypBCjCxpxUo1VoLsAycYQFrLmuxGTuEFRJfBtZs/yDRZ45\n" +
-            "XRqlQ+LJ1zcS72rVkKmoTb5x/H/m9aPiyCEBAiEA2dmnF3Z9/06EWpo9o1h5pKqw\n" +
-            "Z9lJfcBEZA3hBePQsjMCIQDUX5Pmyjl0NaeugaMycjXRUTi+QgLVcW0dyQkdfp0H\n" +
-            "qQIhAM+wQSyNOvH72RLHmZvw7Yefcy6OaRIKCymYUb9bwcshAiEAgW+LTiM8ZyZ4\n" +
-            "f3RFie5v/JY7NkI3Re2uqnOnmZFclZkCIBjtqrGhIVuBdsnNqKJTJ+H/lGCj8VKw\n" +
-            "7EPWRNREMaIX";
+    String privateKey = "MIICXQIBAAKBgQCrT6NWNGj21BswfIZRx3KCothrZruu5AZi2B58mmqHt1f4fUFi\n" +
+            "brQVpnIIvsEEgSFsiKZFggLwQJ0IRcS9cOsvoEWonO832Aly5PgKuZ9yElRLZjgq\n" +
+            "FG9jHPbN5qYbX7X+jNVwxbll2yzfqixuVPuxnDpxkzV2m8PrcQbW8wu3jQIDAQAB\n" +
+            "AoGAPFfgFCR/+Ln8HdcvRS05I9US4LoeUFuX+EdibcfC0K1/elM8rdyK6Llpn7T5\n" +
+            "romB6YY083T5bgGEjv5sb8KPxPJkXfV4cF0PhKTdC+6bDbKIpKruUDcUMO+n7hbm\n" +
+            "G/O7zWf4cBILKjJyBYRHxXB7d9fV81cnNeJ7u+xz0hWmnW0CQQDVDcjoLRr3rQLE\n" +
+            "fdBNYxPFxc3zz5L0dK5PYPuqzfullHn8F1Lhwvb9IZIeqf4hP9e9ufUyl+Nfdttq\n" +
+            "SvUpb/JTAkEAzdfNUlLo3IDWO/uT7fuJOxvvCnejGOCoL1nw5eM/kQ7uLDrF2JI3\n" +
+            "DCEmSPKLb1oJ2Y7sH+newhPKyvQZfBAynwJBAMG2Bdxr3mAhEyoahoFGOx0Py0EJ\n" +
+            "k0DmsfIEaO4U2N/kzsCRaE9SWAUxN8zfnOsYRA0B/dmhVh9fTwIm4x9o5HcCQAUH\n" +
+            "TZPCRMAGQbWLasy4hVy1TPyjeY+FBXbKqrDjAU2I4NahxO2KfN/F+4pyqmdY+r6e\n" +
+            "2DPbYb65/w1AM1Mtjh8CQQDH/yx/IMDn56dZF5Z8vm4rikhjF7UrxunaE7Rt9bK4\n" +
+            "Cjn/lBAZSaq//3lv9wtQmEFoWZI9B8IHZnMa019/L9uI";
 
     //商户入驻
     public ResultModle addMerchant(){

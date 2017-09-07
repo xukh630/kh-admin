@@ -2,8 +2,13 @@ package com.kh.admin.api.controller;/**
  * Created by Administrator on 2017/7/25.
  */
 
+import com.alibaba.common.lang.StringUtil;
+import com.alibaba.druid.util.StringUtils;
 import com.kh.admin.common.enums.PayPlatform;
+import com.kh.admin.common.result.ResultModle;
 import com.kh.admin.common.utils.DateUtil;
+import com.kh.admin.model.LpDayOrder;
+import org.apache.poi.ss.formula.functions.T;
 import org.joda.time.DateTime;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,6 +26,20 @@ public class testController {
        int a = 511;
         System.out.println(a%500);
         System.out.println(a/500);
+
+
+        LpDayOrder lpDayOrder = new LpDayOrder();
+
+        lpDayOrder.setOrderSn("11111");
+
+        boolean equals = StringUtil.equals(lpDayOrder.getLiquidatorId(), lpDayOrder.getOrderSn());
+
+        if (equals == true) {
+            System.out.println(1);
+        } else {
+            System.out.println(2);
+        }
+
 
 
 
