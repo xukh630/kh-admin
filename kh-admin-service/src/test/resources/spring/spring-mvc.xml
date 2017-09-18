@@ -31,7 +31,7 @@
           class="org.springframework.context.support.ConversionServiceFactoryBean">
         <property name="converters">
             <set>
-                <bean class="com.kh.admin.api.converter.StringToTrimmedStringConverter"/>
+                <bean class="com.kh.admin.service.converter.StringToTrimmedStringConverter"/>
             </set>
         </property>
     </bean>
