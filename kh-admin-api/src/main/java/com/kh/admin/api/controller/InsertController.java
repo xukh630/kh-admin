@@ -1,6 +1,9 @@
 package com.kh.admin.api.controller;
 
+import com.kh.admin.common.result.ResultModle;
+import com.kh.admin.model.Finance;
 import com.kh.admin.service.InsertService;
+import com.kh.admin.service.TestService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,10 +23,25 @@ public class InsertController {
 
     @Resource
     private InsertService insertService;
+    @Resource
+    private TestService testService;
 
     @RequestMapping("/test")
     public void test(){
-        insertService.insert();
+        testService.insert();
+    }
+
+    public static void main(String[] args) {
+        String s = "/20170918/shop_pic/indoor/20161025115747161/5bd6b1a8717d48e3b6b71fbb4fe725de/shop_indoor.jpg|/20170918/shop_pic/indoor/20161025115747161/5bd6b1a8717d48e3b6b71fbb4fe725de/shop_indoor.jpg|/20170918/shop_pic/indoor/20161025115747161/5bd6b1a8717d48e3b6b71fbb4fe725de/shop_indoor.jpg|/20170918/shop_pic/indoor/20161025115747161/5bd6b1a8717d48e3b6b71fbb4fe725de/shop_indoor.jpg";
+        String a = "1|2|3|4|5|6|7|8";
+        String d = "11111,222222,333333";
+
+        String[] split = s.split("\\|");
+        String[] split1 = a.split("\\|");
+        String[] split2 = d.split(",");
+        System.out.println(split.length);
+        System.out.println(split1.length);
+        System.out.println(split2.length);
     }
 
 }
