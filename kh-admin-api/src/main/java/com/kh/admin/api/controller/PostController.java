@@ -272,4 +272,9 @@ public class PostController {
     public ResultModle bestPay(){
         return null;
     }
+
+    @RequestMapping("/shop")
+    public ResultModle shop(){
+        return postService.shop();
+    }
 }

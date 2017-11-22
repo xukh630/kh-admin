@@ -17,6 +17,14 @@
             <artifactId>kh-admin-dao</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.kh.admin</groupId>
+            <artifactId>kh-admin-model</artifactId>
+        </dependency>
+        <dependency>
+            <groupId></groupId>
+            <artifactId></artifactId>
+        </dependency>
     </dependencies>
 
 </project>

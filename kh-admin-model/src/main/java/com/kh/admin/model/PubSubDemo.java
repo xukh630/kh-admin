@@ -15,7 +15,7 @@ public class PubSubDemo {
 
     public static void main( String[] args )
     {
-        // 替换成你的reids地址和端口
+
         String redisIp = "127.0.0.1";
         int reidsPort = 6379;
         JedisPool jedisPool = new JedisPool(new JedisPoolConfig(), redisIp, reidsPort);

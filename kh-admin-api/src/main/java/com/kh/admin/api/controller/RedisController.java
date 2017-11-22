@@ -19,28 +19,5 @@ import javax.annotation.Resource;
 @RequestMapping(value = "/redis")
 public class RedisController {
 
-    @Resource
-    private RedisService redisService;
-
-    @RequestMapping("/add")
-    public void add(){
-        redisService.redisConnect1();
-        //redisService.testMap();
-        //redisService.test();
-        //redisService.close();
-        //redisService.removeAll();
-        //redisService.listTest();
-        //redisService.setTest();
-        //redisService.setDiff();
-        //redisService.live();
-        redisService.liv();
-    }
-
-    @RequestMapping("/test")
-    public ResultModle test(){
-        return redisService.redisTemplate();
-    }
-
-
 
 }

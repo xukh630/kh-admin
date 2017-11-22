@@ -18,15 +18,14 @@ import javax.annotation.Resource;
 @RequestMapping("/insert")
 public class InsertController {
 
-    @Resource
-    private InsertService insertService;
-    @Resource
-    private TestService testService;
+    //@Resource
+    //private InsertService insertService;
+
 
     @RequestMapping("/test")
     public void test(){
-        //testService.insert();
-        insertService.insert();
+
+        //insertService.insert();
     }
 
     @RequestMapping("/user")
@@ -34,7 +33,7 @@ public class InsertController {
                      String password,
                      String salt,
                      Integer status){
-        insertService.insertUser(username, password, salt, status);
+        //insertService.insertUser(username, password, salt, status);
     }
 
     public static void main(String[] args) {

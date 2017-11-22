@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="kh-admin-api:war exploded">
-    <output-path>$PROJECT_DIR$/kh-admin-api/target/liquidatoradmin_dev_${current.time}</output-path>
+    <output-path>$PROJECT_DIR$/kh-admin-api/target/liquidatoradmin_dev_</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
@@ -9,12 +9,6 @@
         <element id="directory" name="lib">
           <element id="archive" name="kh-admin-service-1.0-SNAPSHOT.jar">
             <element id="module-output" name="kh-admin-service" />
-          </element>
-          <element id="archive" name="kh-admin-dao-1.0-SNAPSHOT.jar">
-            <element id="module-output" name="kh-admin-dao" />
-          </element>
-          <element id="archive" name="kh-admin-model-1.0-SNAPSHOT.jar">
-            <element id="module-output" name="kh-admin-model" />
           </element>
           <element id="archive" name="kh-admin-common-1.0-SNAPSHOT.jar">
             <element id="module-output" name="kh-admin-common" />
@@ -104,7 +98,7 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/kh-admin-api/target/liquidatoradmin_dev_${current.time}/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/kh-admin-api/target/liquidatoradmin_dev_/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="kh-admin-api/web/Web" />
     </root>

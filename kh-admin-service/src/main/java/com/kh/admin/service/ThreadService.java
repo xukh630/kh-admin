@@ -36,15 +36,17 @@ public class ThreadService {
         public void run() {
             System.out.println("生产者运行");
             Jedis jedis = new Jedis("127.0.0.1");
+            int i =0;
 
             while (true) {
-
                 UUID uuid = UUID.randomUUID();
 
-                jedis.lpush("task",uuid.toString());
+                jedis.lpush("task",uuid.toString() + "------"  + i);
 
-                System.out.println("生产者插入了一个新任务" + uuid);
+                System.out.println("生产者插入了一个新任务" + uuid.toString() + "------"  + i);
 
+
+                i ++;
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
@@ -82,12 +84,12 @@ public class ThreadService {
     }
 
     public static void main(String[] args) {
-       /* new Thread(new Producer()).start();
-        new Thread(new Comsumer()).start();*/
+        new Thread(new Producer()).start();
+        new Thread(new Comsumer()).start();
 
 
-       new Thread(new Sub()).start();
-       new Thread(new Pub()).start();
+      /* new Thread(new Sub()).start();
+       new Thread(new Pub()).start();*/
     }
 
     public void del(){

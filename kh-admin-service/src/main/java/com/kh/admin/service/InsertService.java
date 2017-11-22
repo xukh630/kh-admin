@@ -1,7 +1,6 @@
 package com.kh.admin.service;
 
 import com.kh.admin.dao.TestMapperExt;
-import com.kh.admin.model.Test;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -22,10 +21,7 @@ public class InsertService {
     private TestMapperExt testMapperExt;
 
     public void insert(){
-        Test test = new Test();
-        test.setId("5");
 
-        testMapperExt.insertSelective(test);
     }
 
 

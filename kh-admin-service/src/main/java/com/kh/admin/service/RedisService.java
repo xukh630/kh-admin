@@ -26,8 +26,8 @@ import java.util.concurrent.TimeUnit;
 @Service
 public class RedisService {
 
-    @Resource
-    JedisConnectionFactory jedisConnectionFactory;
+    /*@Resource
+    private JedisConnectionFactory jedisConnectionFactory;
     @Resource
     private StringRedisTemplate stringRedisTemplate;
 
@@ -51,8 +51,8 @@ public class RedisService {
 
    //jedisConnectionFactory
     public void redisConnect3(){
-        jedis = jedisConnectionFactory.getShardInfo().createResource();
-        jedis.set("connect3","connect3");
+        //jedis = jedisConnectionFactory.getShardInfo().createResource();
+        //jedis.set("connect3","connect3");
 
     }
 //Redis---------Map----CRUD----------------------------------------------------------------------------------------------------------
@@ -92,14 +92,14 @@ public class RedisService {
     }
 //Redis--------------List-------------------lindex-list1-0----------------------------------------------------------------------------------
 
-    /**
+    *//**
      * lpush 插入头    rpush插尾     lpushx    rpushx
      * linsert - after/before -
      * lindex key index
      * lset key index value
      * lrem 移除
      * llen 取长度
-     */
+     *//*
     public void listTest(){
        jedis.lpush("list1","list1");
        jedis.lpush("list1","list11");           //添加到表头
@@ -127,7 +127,7 @@ public class RedisService {
    }
 //Redis----------------set---------------------------------------------------------------------------------------------------
 
-    /**
+    *//**
      * sadd         增加元素
      * smembers     获取所有元素
      * sismember    判断元素是否存在
@@ -135,7 +135,7 @@ public class RedisService {
      * srandmember  随机返回一个元素
      * spop         移除元素并随机返回一个元素
      * srem         移除一个或多个元素
-     */
+     *//*
     public void setTest(){
        jedis.sadd("set","1","0");
        jedis.sadd("set","2");
@@ -175,12 +175,12 @@ public class RedisService {
 
    }
 
-    /**设置生命周期
+    *//**设置生命周期
      * expire             秒
      * pepxpire           毫秒
      * expireat           秒级时间戳
      * pexpireat          毫秒级时间戳
-     */
+     *//*
    public void liv(){
        String time = jedis.set("time", "20170725");
        jedis.expire("time",20);
@@ -192,6 +192,7 @@ public class RedisService {
     //频道发布publish    A  B    发布A频道  B 信息
     //模式订阅psubscribe
     //查看订阅信息pubsub
+    //允许客户端通过订阅特定的频道，从而得知是否有改变Redis中的数据的事件。
 
     public static void producer(){
         Jedis jedis1 = new Jedis("127.0.0.1");      //jedis 线程不安全    jedispool线程安全
@@ -235,5 +236,5 @@ public class RedisService {
         stringRedisTemplate.opsForValue().setIfAbsent("redisKey","1");
         stringRedisTemplate.opsForValue().set("redisKey","2",1,TimeUnit.DAYS);
         return ResultModle.success("true");
-    }
+    }*/
 }

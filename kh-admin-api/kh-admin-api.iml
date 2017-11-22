@@ -19,15 +19,13 @@
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="kh-admin-service" />
-    <orderEntry type="module" module-name="kh-admin-dao" />
-    <orderEntry type="module" module-name="kh-admin-model" />
     <orderEntry type="module" module-name="kh-admin-common" />
     <orderEntry type="library" name="Maven: com.alibaba.common.lang:toolkit-common-lang:1.0" level="project" />
     <orderEntry type="library" name="Maven: com.qiniu:qiniu-java-sdk:7.1.3" level="project" />

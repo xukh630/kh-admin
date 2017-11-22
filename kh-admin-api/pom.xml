@@ -1,23 +1,41 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+
+    <!-- 父项目的坐标。如果项目中没有规定某个元素的值，那么父项目中的对应值即为项目的默认值。
+     坐标包括group ID，artifact ID和 version。 -->
     <parent>
-        <artifactId>kh-admin</artifactId>
-        <groupId>com.kh.admin</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <artifactId>kh-admin</artifactId><!-- 被继承的父项目的构件标识符 -->
+        <groupId>com.kh.admin</groupId><!-- 被继承的父项目的全球唯一标识符 -->
+        <version>1.0-SNAPSHOT</version><!-- 被继承的父项目的版本 -->
     </parent>
+
+    <!-- 声明项目描述符遵循哪一个POM模型版本。模型本身的版本很少改变，
+    虽然如此，但它仍然是必不可少的，这是为了当Maven引入了新的特性或者其他模型变更的时候，确保稳定性。 -->
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>kh-admin-api</artifactId>
+    <!-- 项目产生的构件类型，例如jar、war、ear、pom。插件可以创建他们自己的构件类型，所以前面列的不是全部构件类型 -->
     <packaging>war</packaging>
 
+    <!-- 项目的名称, Maven产生的文档用 -->
     <name>kh-admin-api Maven Webapp</name>
+
+    <!-- 项目主页的URL, Maven产生的文档用 -->
     <url>http://maven.apache.org</url>
+
+
 
     <dependencies>
         <dependency>
             <groupId>com.kh.admin</groupId>
             <artifactId>kh-admin-service</artifactId>
             <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.kh.admin</groupId>
+            <artifactId>kh-admin-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
@@ -28,6 +46,7 @@
             <id>dev</id>
             <properties>
                 <active.profile>dev</active.profile>
+                <current.time></current.time>
             </properties>
             <activation>
                 <activeByDefault>true</activeByDefault>

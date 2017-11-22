@@ -24,13 +24,7 @@ public class EmailService {
     @Resource(name = "mailSender")
     private JavaMailSenderImpl mailSender;
 
-    /**
-     * 发邮件
-     *
-     * @param sendTo
-     * @param subject
-     * @param text
-     */
+
     public void send(String[] sendTo, String subject, String text) {
         try {
             SimpleMailMessage message = new SimpleMailMessage();

@@ -16,10 +16,10 @@ public class TestPublish {
     @Test
     public void testPublish() throws InterruptedException {
         Jedis jedis = new Jedis("127.0.0.1");
-        jedis.publish("redisChatTest","我是天才");
+        jedis.publish("redisChatTest","deep");
         Thread.sleep(5000);
-        jedis.publish("redisChatTest","我牛逼");
+        jedis.publish("redisChatTest","duck");
         Thread.sleep(5000);
-        jedis.publish("redisChatTest","哈哈");
+        jedis.publish("redisChatTest","fantastic");
     }
 }
